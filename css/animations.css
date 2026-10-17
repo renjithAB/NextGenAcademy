@@ -1,0 +1,1138 @@
+/* ==========================================================================
+   NEXT GEN ACADEMY — ANIMATIONS & TRANSITIONS
+   All durations reference var(--duration-*) tokens.
+   All easings reference var(--ease-*) tokens.
+   Never hardcode timing or easing values here.
+   ========================================================================== */
+
+/* ==========================================================================
+   1. KEYFRAME ANIMATIONS
+   ========================================================================== */
+
+/* ── Fade ─────────────────────────────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* ── Fade + Directional Translate ─────────────────────────────────────────── */
+
+@keyframes fadeInUp {
+  from {
+    opacity:   0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity:   1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity:   0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity:   1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity:   0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity:   1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity:   0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity:   1;
+    transform: translateX(0);
+  }
+}
+
+/* ── Slide (full-element travel) ──────────────────────────────────────────── */
+
+@keyframes slideInUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes slideInDown {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes slideOutDown {
+  from { transform: translateY(0); }
+  to   { transform: translateY(100%); }
+}
+
+/* ── Scale + Fade ─────────────────────────────────────────────────────────── */
+
+@keyframes scaleIn {
+  from {
+    opacity:   0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity:   1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    opacity:   1;
+    transform: scale(1);
+  }
+  to {
+    opacity:   0;
+    transform: scale(0.95);
+  }
+}
+
+/* ── Skeleton Shimmer ─────────────────────────────────────────────────────── */
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* ── Spinner (continuous rotation) ───────────────────────────────────────── */
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Pulse (opacity beat for skeletons / loading) ─────────────────────────── */
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.45; }
+}
+
+/* ── Bounce (vertical translateY) ────────────────────────────────────────── */
+
+@keyframes bounce {
+  0%, 100% {
+    transform:                 translateY(0);
+    animation-timing-function: var(--ease-out);
+  }
+  50% {
+    transform:                 translateY(-12px);
+    animation-timing-function: var(--ease-in);
+  }
+}
+
+/* ── Hero Entrance (scale + opacity, for headline text) ───────────────────── */
+
+@keyframes heroEntrance {
+  0% {
+    opacity:   0;
+    transform: scale(0.96) translateY(16px);
+    filter:    blur(4px);
+  }
+  60% {
+    opacity:   1;
+    filter:    blur(0);
+  }
+  100% {
+    opacity:   1;
+    transform: scale(1) translateY(0);
+    filter:    blur(0);
+  }
+}
+
+/* ── Float (subtle vertical oscillation for decorative elements) ──────────── */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* ── Gradient Shift (background-position motion for gradient backgrounds) ─── */
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Count-Up helper (JS reads this; the actual number change is JS-driven) ── */
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Toast slide-in / slide-out (LTR) ────────────────────────────────────── */
+
+@keyframes toastSlideInRight {
+  from {
+    opacity:   0;
+    transform: translateX(calc(100% + var(--space-6)));
+  }
+  to {
+    opacity:   1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes toastSlideOutRight {
+  from {
+    opacity:   1;
+    transform: translateX(0);
+  }
+  to {
+    opacity:   0;
+    transform: translateX(calc(100% + var(--space-6)));
+  }
+}
+
+/* ── Toast slide-in / slide-out (RTL) ────────────────────────────────────── */
+
+@keyframes toastSlideInLeft {
+  from {
+    opacity:   0;
+    transform: translateX(calc(-100% - var(--space-6)));
+  }
+  to {
+    opacity:   1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes toastSlideOutLeft {
+  from {
+    opacity:   1;
+    transform: translateX(0);
+  }
+  to {
+    opacity:   0;
+    transform: translateX(calc(-100% - var(--space-6)));
+  }
+}
+
+/* ── Toast auto-dismiss progress bar ─────────────────────────────────────── */
+
+@keyframes toastProgress {
+  from { transform: scaleX(1); }
+  to   { transform: scaleX(0); }
+}
+
+/* ── Nav underline slide ──────────────────────────────────────────────────── */
+
+@keyframes navUnderlineIn {
+  from { transform: scaleX(0); transform-origin: left center; }
+  to   { transform: scaleX(1); transform-origin: left center; }
+}
+
+/* ==========================================================================
+   2. ANIMATION UTILITY CLASSES
+   ========================================================================== */
+
+/* ── Base animation defaults (can be overridden per-class) ────────────────── */
+
+.animate-fade-in {
+  animation: fadeIn var(--duration-normal) var(--ease-out) both;
+}
+
+.animate-fade-out {
+  animation: fadeOut var(--duration-normal) var(--ease-in) both;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp var(--duration-slow) var(--ease-out) both;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown var(--duration-slow) var(--ease-out) both;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft var(--duration-slow) var(--ease-out) both;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight var(--duration-slow) var(--ease-out) both;
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--duration-normal) var(--ease-spring) both;
+}
+
+.animate-scale-out {
+  animation: scaleOut var(--duration-fast) var(--ease-in) both;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp var(--duration-slow) var(--ease-out) both;
+}
+
+.animate-slide-out-down {
+  animation: slideOutDown var(--duration-slow) var(--ease-in) both;
+}
+
+/* ── Continuous utilities ─────────────────────────────────────────────────── */
+
+.animate-spin {
+  animation: spin var(--duration-slower) var(--ease-linear) infinite;
+}
+
+.animate-pulse {
+  animation: pulse calc(var(--duration-slowest) * 2) var(--ease-in-out) infinite;
+}
+
+.animate-bounce {
+  animation: bounce calc(var(--duration-slowest) * 1.25) var(--ease-in-out) infinite;
+}
+
+.animate-float {
+  animation: float calc(var(--duration-slowest) * 3.75) var(--ease-in-out) infinite;
+}
+
+/* ── Delay helpers (compose with utility classes) ─────────────────────────── */
+
+.delay-75  { animation-delay: 75ms; }
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: var(--duration-fast); }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: var(--duration-normal); }
+.delay-400 { animation-delay: var(--duration-slow); }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: var(--duration-slower); }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: var(--duration-slowest); }
+
+/* ── Duration overrides ───────────────────────────────────────────────────── */
+
+.duration-fast    { animation-duration: var(--duration-fast); }
+.duration-normal  { animation-duration: var(--duration-normal); }
+.duration-slow    { animation-duration: var(--duration-slow); }
+.duration-slower  { animation-duration: var(--duration-slower); }
+.duration-slowest { animation-duration: var(--duration-slowest); }
+
+/* ==========================================================================
+   3. HERO SECTION ANIMATIONS
+   ========================================================================== */
+
+/*
+ * Apply `.hero-animate` to the hero content wrapper AFTER the page has
+ * loaded.  JS adds the class to trigger staged entrances.
+ * Children must carry [data-hero-label], [data-hero-title], etc. selectors,
+ * OR simply be targeted by :nth-child stagger rules below.
+ */
+
+.hero-content {
+  /* Prevent flash of unstyled content before JS triggers the class */
+  opacity: 0;
+  transition: none;
+}
+
+.hero-animate .hero-content {
+  opacity: 1; /* Reveal wrapper; children animate individually */
+}
+
+/* ── Staged children by semantic role ─────────────────────────────────────── */
+
+.hero-animate [data-hero-label] {
+  animation: fadeInDown var(--duration-slow) var(--ease-out) both;
+  animation-delay: 0ms;
+}
+
+.hero-animate [data-hero-title] {
+  animation: heroEntrance var(--duration-slowest) var(--ease-out) both;
+  animation-delay: 120ms;
+}
+
+.hero-animate [data-hero-subtitle] {
+  animation: fadeInUp var(--duration-slow) var(--ease-out) both;
+  animation-delay: 280ms;
+}
+
+.hero-animate [data-hero-cta] {
+  animation: fadeInUp var(--duration-slow) var(--ease-out) both;
+  animation-delay: 420ms;
+}
+
+.hero-animate [data-hero-trust] {
+  animation: fadeInUp var(--duration-normal) var(--ease-out) both;
+  animation-delay: 560ms;
+}
+
+/* ── Hero visual (illustration / video thumbnail) ─────────────────────────── */
+
+.hero-visual {
+  opacity: 0;
+  transform: scale(0.97) translateY(12px);
+  transition:
+    opacity  var(--duration-slower)    var(--ease-out),
+    transform var(--duration-slower)   var(--ease-spring);
+  transition-delay: 300ms;
+}
+
+.hero-animate .hero-visual {
+  opacity:   1;
+  transform: scale(1) translateY(0);
+}
+
+/* ── Floating badge / decorative blobs inside hero ────────────────────────── */
+
+.hero-blob,
+.hero-badge-float {
+  animation: float calc(var(--duration-slowest) * 3.75) var(--ease-in-out) infinite;
+}
+
+.hero-blob:nth-child(2),
+.hero-badge-float:nth-child(2) {
+  animation-delay: calc(var(--duration-slowest) * 1.25);
+}
+
+/* ── Gradient-shifting hero background ─────────────────────────────────────── */
+
+.hero-gradient-bg {
+  background-size: 200% 200%;
+  animation: gradientShift calc(var(--duration-slowest) * 9) var(--ease-in-out) infinite;
+}
+
+/* ==========================================================================
+   4. CARD HOVER EFFECTS
+   ========================================================================== */
+
+/*
+ * Base card transition — applied at the card level.
+ * Assumes the card has overflow: hidden so inner image scaling is clipped.
+ */
+
+.card {
+  transition:
+    transform    var(--duration-normal) var(--ease-out),
+    box-shadow   var(--duration-normal) var(--ease-out),
+    border-color var(--duration-normal) var(--ease-out);
+  will-change: transform, box-shadow;
+}
+
+.card:hover,
+.card:focus-within {
+  transform:   translateY(-4px);
+  box-shadow:  var(--shadow-card-hover);
+  border-color: var(--color-card-hover-border);
+}
+
+.card:active {
+  transform:  translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+/* ── Card image scale on hover ─────────────────────────────────────────────── */
+
+.card__media {
+  overflow: hidden;
+}
+
+.card__image {
+  transition: transform var(--duration-slow) var(--ease-out);
+  will-change: transform;
+}
+
+.card:hover .card__image,
+.card:focus-within .card__image {
+  transform: scale(1.05);
+}
+
+/* ── Card badge / tag animate in ──────────────────────────────────────────── */
+
+.card__badge {
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+/* ==========================================================================
+   5. BUTTON INTERACTIONS
+   ========================================================================== */
+
+.btn {
+  transition:
+    background-color var(--duration-fast)   var(--ease-out),
+    color            var(--duration-fast)   var(--ease-out),
+    border-color     var(--duration-fast)   var(--ease-out),
+    box-shadow       var(--duration-fast)   var(--ease-out),
+    transform        var(--duration-fast)   var(--ease-out),
+    opacity          var(--duration-fast)   var(--ease-out);
+  will-change: transform;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.btn:active:not(:disabled) {
+  transform: scale(0.97) translateY(0);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* ── Loading state inside button ───────────────────────────────────────────── */
+
+.btn--loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.btn--loading::after {
+  content:    "";
+  position:   absolute;
+  inset:      50% auto auto 50%;
+  width:      1em;
+  height:     1em;
+  margin:     -0.5em 0 0 -0.5em;
+  border:     2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: var(--radius-full);
+  animation:  spin var(--duration-slower) var(--ease-linear) infinite;
+  color:      inherit;
+  /* Restore text color for the spinner border */
+  border-color:     rgba(255 255 255 / 30%);
+  border-top-color: transparent;
+  border-right-color: rgba(255 255 255 / 80%);
+}
+
+/* ── Focus ring (keyboard navigation) ─────────────────────────────────────── */
+
+.btn:focus-visible {
+  outline:        var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+  transition:     outline-offset var(--duration-fast) var(--ease-out);
+}
+
+/* ==========================================================================
+   6. NAVIGATION TRANSITIONS
+   ========================================================================== */
+
+/* ── Mobile menu (slide-in from inline-start) ─────────────────────────────── */
+
+.nav-mobile-menu {
+  transform:  translateX(-100%);
+  transition: transform var(--duration-slow) var(--ease-out);
+  visibility: hidden;
+}
+
+/* RTL: slide from the other side */
+[dir="rtl"] .nav-mobile-menu {
+  transform: translateX(100%);
+}
+
+.nav-mobile-menu.is-open {
+  transform:  translateX(0);
+  visibility: visible;
+}
+
+/* ── Mobile menu overlay backdrop ─────────────────────────────────────────── */
+
+.nav-overlay {
+  opacity:    0;
+  visibility: hidden;
+  transition:
+    opacity    var(--duration-slow) var(--ease-out),
+    visibility var(--duration-slow) var(--ease-out);
+}
+
+.nav-overlay.is-open {
+  opacity:    1;
+  visibility: visible;
+}
+
+/* ── Dropdown panel (fade + scale) ────────────────────────────────────────── */
+
+.nav-dropdown {
+  opacity:    0;
+  transform:  scale(0.97) translateY(-6px);
+  visibility: hidden;
+  transition:
+    opacity    var(--duration-normal) var(--ease-out),
+    transform  var(--duration-normal) var(--ease-spring),
+    visibility var(--duration-normal) var(--ease-out);
+  transform-origin: top center;
+  pointer-events: none;
+}
+
+.nav-item:hover   .nav-dropdown,
+.nav-item:focus-within .nav-dropdown {
+  opacity:    1;
+  transform:  scale(1) translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ── Nav link underline slide animation ───────────────────────────────────── */
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link::after {
+  content:    "";
+  position:   absolute;
+  inset-inline-start: 0;
+  inset-block-end:    -2px;
+  width:      100%;
+  height:     2px;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  transform:  scaleX(0);
+  transform-origin: inline-start center;
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+/* RTL: origin from the right */
+[dir="rtl"] .nav-link::after {
+  transform-origin: right center;
+}
+
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* ── Sticky header reveal on scroll ─────────────────────────────────────────  */
+
+.header {
+  transition:
+    background-color var(--duration-normal) var(--ease-out),
+    box-shadow       var(--duration-normal) var(--ease-out),
+    transform        var(--duration-slow)   var(--ease-out);
+}
+
+.header.is-scrolled {
+  box-shadow: var(--shadow-nav);
+}
+
+.header.is-hidden {
+  transform: translateY(-100%);
+}
+
+/* ==========================================================================
+   7. MODAL / OVERLAY TRANSITIONS
+   ========================================================================== */
+
+/* ── Overlay backdrop ─────────────────────────────────────────────────────── */
+
+.modal-overlay {
+  opacity:    0;
+  visibility: hidden;
+  transition:
+    opacity    var(--duration-normal) var(--ease-out),
+    visibility var(--duration-normal) var(--ease-out);
+  background: var(--color-overlay);
+}
+
+.modal-overlay.is-open {
+  opacity:    1;
+  visibility: visible;
+}
+
+/* ── Modal panel entrance ─────────────────────────────────────────────────── */
+
+.modal {
+  opacity:   0;
+  transform: scale(0.94) translateY(12px);
+  transition:
+    opacity   var(--duration-normal) var(--ease-spring),
+    transform var(--duration-normal) var(--ease-spring);
+  will-change: transform, opacity;
+}
+
+.modal-overlay.is-open .modal {
+  opacity:   1;
+  transform: scale(1) translateY(0);
+}
+
+/* ── Modal close (reversed) ───────────────────────────────────────────────── */
+
+.modal-overlay.is-closing .modal {
+  opacity:   0;
+  transform: scale(0.94) translateY(12px);
+  transition:
+    opacity   var(--duration-fast) var(--ease-in),
+    transform var(--duration-fast) var(--ease-in);
+}
+
+.modal-overlay.is-closing {
+  opacity:    0;
+  transition:
+    opacity    var(--duration-fast) var(--ease-in),
+    visibility var(--duration-fast) var(--ease-in);
+}
+
+/* ==========================================================================
+   8. TOAST / SNACKBAR ANIMATIONS
+   ========================================================================== */
+
+/* ── Toast container (fixed, no animation itself) ─────────────────────────── */
+
+.toast-container {
+  pointer-events: none;
+}
+
+.toast-container > * {
+  pointer-events: auto;
+}
+
+/* ── Individual toast (LTR default: slide in from inline-end / right) ──────── */
+
+.toast {
+  animation: toastSlideInRight var(--duration-slow) var(--ease-spring) both;
+  position: relative;
+  overflow: hidden;
+}
+
+/* RTL: slide in from inline-start / left */
+[dir="rtl"] .toast {
+  animation-name: toastSlideInLeft;
+}
+
+/* ── Toast dismiss ─────────────────────────────────────────────────────────── */
+
+.toast.is-dismissing {
+  animation: toastSlideOutRight var(--duration-normal) var(--ease-in) both;
+}
+
+[dir="rtl"] .toast.is-dismissing {
+  animation-name: toastSlideOutLeft;
+}
+
+/* ── Auto-dismiss progress bar ─────────────────────────────────────────────── */
+
+.toast__progress {
+  position: absolute;
+  inset-block-end:  0;
+  inset-inline-start: 0;
+  height: 3px;
+  width:  100%;
+  background: var(--color-primary);
+  transform-origin: left center;
+  animation: toastProgress var(--toast-duration, 5000ms) var(--ease-linear) forwards;
+}
+
+[dir="rtl"] .toast__progress {
+  transform-origin: right center;
+}
+
+/* ==========================================================================
+   9. SKELETON / SHIMMER LOADER
+   ========================================================================== */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-skeleton)       25%,
+    var(--color-skeleton-shine) 37%,
+    var(--color-skeleton)       63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer calc(var(--duration-slowest) * 1.875) var(--ease-in-out) infinite;
+  border-radius: var(--radius-md);
+}
+
+/* ==========================================================================
+   10. SCROLL REVEAL
+   ========================================================================== */
+
+/*
+ * Elements with [data-reveal] start invisible.
+ * JS adds .is-visible when they enter the viewport.
+ */
+
+[data-reveal] {
+  opacity:   0;
+  transform: translateY(20px);
+  transition:
+    opacity   var(--duration-slow)   var(--ease-out),
+    transform var(--duration-slow)   var(--ease-out);
+}
+
+[data-reveal="left"] {
+  transform: translateX(-20px);
+}
+
+[data-reveal="right"] {
+  transform: translateX(20px);
+}
+
+[data-reveal="scale"] {
+  transform: scale(0.95);
+}
+
+[data-reveal="fade"] {
+  transform: none;
+}
+
+[data-reveal].is-visible {
+  opacity:   1;
+  transform: none;
+}
+
+/* ── Stagger children ─────────────────────────────────────────────────────── */
+
+/*
+ * Add .stagger-children to any container.
+ * Each direct child gets a progressively longer delay (up to 10 items).
+ */
+
+.stagger-children > * {
+  opacity:   0;
+  transform: translateY(16px);
+  transition:
+    opacity   var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+.stagger-children.is-visible > *,
+.stagger-children > *.is-visible {
+  opacity:   1;
+  transform: none;
+}
+
+.stagger-children > *:nth-child(1)  { transition-delay: 0ms; }
+.stagger-children > *:nth-child(2)  { transition-delay: 60ms; }
+.stagger-children > *:nth-child(3)  { transition-delay: 120ms; }
+.stagger-children > *:nth-child(4)  { transition-delay: 180ms; }
+.stagger-children > *:nth-child(5)  { transition-delay: 240ms; }
+.stagger-children > *:nth-child(6)  { transition-delay: 300ms; }
+.stagger-children > *:nth-child(7)  { transition-delay: 360ms; }
+.stagger-children > *:nth-child(8)  { transition-delay: 420ms; }
+.stagger-children > *:nth-child(9)  { transition-delay: 480ms; }
+.stagger-children > *:nth-child(10) { transition-delay: 540ms; }
+.stagger-children > *:nth-child(n + 11) { transition-delay: 600ms; }
+
+/* ── Stagger variant: fade only (no translate) ────────────────────────────── */
+
+.stagger-fade > * {
+  opacity:   0;
+  transition: opacity var(--duration-slow) var(--ease-out);
+}
+
+.stagger-fade.is-visible > *,
+.stagger-fade > *.is-visible {
+  opacity: 1;
+}
+
+.stagger-fade > *:nth-child(1)  { transition-delay: 0ms; }
+.stagger-fade > *:nth-child(2)  { transition-delay: 60ms; }
+.stagger-fade > *:nth-child(3)  { transition-delay: 120ms; }
+.stagger-fade > *:nth-child(4)  { transition-delay: 180ms; }
+.stagger-fade > *:nth-child(5)  { transition-delay: 240ms; }
+.stagger-fade > *:nth-child(6)  { transition-delay: 300ms; }
+.stagger-fade > *:nth-child(7)  { transition-delay: 360ms; }
+.stagger-fade > *:nth-child(8)  { transition-delay: 420ms; }
+.stagger-fade > *:nth-child(9)  { transition-delay: 480ms; }
+.stagger-fade > *:nth-child(10) { transition-delay: 540ms; }
+
+/* ── Count-up number entrance ─────────────────────────────────────────────── */
+
+.stat-number[data-count] {
+  animation: countUp var(--duration-slow) var(--ease-out) both;
+}
+
+/* ==========================================================================
+   11. THEME TRANSITION
+   ========================================================================== */
+
+/*
+ * When JS adds .theme-transitioning to <html> during a theme switch,
+ * every element transitions its color/background smoothly.
+ * The class is removed immediately after the transition ends (~300ms).
+ */
+
+.theme-transitioning *,
+.theme-transitioning *::before,
+.theme-transitioning *::after {
+  transition:
+    background-color var(--duration-normal) var(--ease-in-out),
+    color            var(--duration-normal) var(--ease-in-out),
+    border-color     var(--duration-normal) var(--ease-in-out),
+    fill             var(--duration-normal) var(--ease-in-out),
+    stroke           var(--duration-normal) var(--ease-in-out),
+    box-shadow       var(--duration-normal) var(--ease-in-out) !important;
+}
+
+/* ==========================================================================
+   12. MISCELLANEOUS COMPONENT TRANSITIONS
+   ========================================================================== */
+
+/* ── Accordion / disclosure panels ────────────────────────────────────────── */
+
+.accordion__panel {
+  overflow: hidden;
+  transition: height var(--duration-normal) var(--ease-in-out);
+}
+
+.accordion__icon {
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.accordion__trigger[aria-expanded="true"] .accordion__icon {
+  transform: rotate(180deg);
+}
+
+/* ── Tabs indicator slide ──────────────────────────────────────────────────── */
+
+.tabs__indicator {
+  transition:
+    transform var(--duration-normal) var(--ease-spring),
+    width     var(--duration-normal) var(--ease-spring);
+  will-change: transform, width;
+}
+
+.tabs__panel {
+  animation: fadeIn var(--duration-fast) var(--ease-out) both;
+}
+
+/* ── Tooltip fade + scale ─────────────────────────────────────────────────── */
+
+.tooltip {
+  opacity:   0;
+  transform: scale(0.95) translateY(4px);
+  transition:
+    opacity   var(--duration-fast)   var(--ease-out),
+    transform var(--duration-fast)   var(--ease-spring),
+    visibility var(--duration-fast)  var(--ease-out);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+[data-tooltip-trigger]:hover .tooltip,
+[data-tooltip-trigger]:focus-within .tooltip {
+  opacity:    1;
+  transform:  scale(1) translateY(0);
+  visibility: visible;
+}
+
+/* ── Announcement bar entrance ─────────────────────────────────────────────── */
+
+.announcement-bar {
+  animation: slideInDown var(--duration-slow) var(--ease-out) both;
+}
+
+/* ── Page transition wrapper (SPA-like soft transitions) ─────────────────── */
+
+.page-enter {
+  animation: fadeInUp var(--duration-slow) var(--ease-out) both;
+}
+
+.page-exit {
+  animation: fadeOut var(--duration-fast) var(--ease-in) both;
+}
+
+/* ── Input focus ring expansion ────────────────────────────────────────────── */
+
+.input,
+.select,
+.textarea {
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    box-shadow   var(--duration-fast) var(--ease-out),
+    background   var(--duration-fast) var(--ease-out);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  box-shadow: var(--shadow-input);
+}
+
+/* ── Chip / tag remove button ──────────────────────────────────────────────── */
+
+.chip {
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    transform        var(--duration-fast) var(--ease-out);
+}
+
+.chip:hover {
+  transform: scale(1.03);
+}
+
+.chip.is-removing {
+  animation: scaleOut var(--duration-fast) var(--ease-in) both;
+}
+
+/* ── Progress bar fill ─────────────────────────────────────────────────────── */
+
+.progress__bar {
+  transition: width var(--duration-slow) var(--ease-out);
+}
+
+/* ── Image lazy-load reveal ────────────────────────────────────────────────── */
+
+img[loading="lazy"] {
+  opacity:    0;
+  transition: opacity var(--duration-slow) var(--ease-out);
+}
+
+img[loading="lazy"].is-loaded {
+  opacity: 1;
+}
+
+/* ── Sidebar slide ─────────────────────────────────────────────────────────── */
+
+.sidebar {
+  transition: transform var(--duration-slow) var(--ease-out);
+  will-change: transform;
+}
+
+.sidebar.is-collapsed {
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .sidebar.is-collapsed {
+  transform: translateX(100%);
+}
+
+/* ── Search expand ─────────────────────────────────────────────────────────── */
+
+.search-bar {
+  transition:
+    width     var(--duration-normal) var(--ease-spring),
+    opacity   var(--duration-normal) var(--ease-out);
+}
+
+/* ==========================================================================
+   13. REDUCED MOTION OVERRIDES
+   All animations and transitions are stripped down to simple opacity fades.
+   Duration tokens in tokens.css also collapse to 0ms under this query,
+   so these rules act as a belt-and-suspenders safety net.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  /* ── Kill all keyframe animations ──────────────────────────────────────── */
+
+  *,
+  *::before,
+  *::after {
+    animation-duration:        0.01ms !important;
+    animation-iteration-count: 1      !important;
+    animation-delay:           0ms    !important;
+    transition-duration:       0.01ms !important;
+    transition-delay:          0ms    !important;
+    scroll-behavior:           auto   !important;
+  }
+
+  /* ── Re-allow minimal opacity fades for semantic feedback ──────────────── */
+
+  .animate-fade-in,
+  .animate-fade-out,
+  [data-reveal],
+  .stagger-children > *,
+  .stagger-fade > *,
+  .modal,
+  .nav-dropdown,
+  .tooltip,
+  .toast {
+    animation:  none !important;
+    transition: opacity 0.15s linear !important;
+  }
+
+  /* ── Ensure reveal elements are immediately visible ───────────────────── */
+
+  [data-reveal],
+  .stagger-children > *,
+  .stagger-fade > *,
+  .hero-content {
+    opacity:   1 !important;
+    transform: none !important;
+  }
+
+  /* ── Ensure spinner doesn't spin (show static indicator instead) ───────── */
+
+  .animate-spin,
+  .btn--loading::after {
+    animation: none !important;
+    border:    2px solid currentColor !important;
+    border-top-color: transparent !important;
+  }
+
+  /* ── Skeleton — no shimmer, use flat colour ────────────────────────────── */
+
+  .skeleton {
+    animation:  none !important;
+    background: var(--color-skeleton) !important;
+  }
+
+  /* ── Float / gradient — completely disable ─────────────────────────────── */
+
+  .animate-float,
+  .animate-bounce,
+  .animate-pulse,
+  .hero-gradient-bg,
+  .hero-blob,
+  .hero-badge-float {
+    animation:  none !important;
+    transform:  none !important;
+  }
+
+  /* ── Hero content always visible ──────────────────────────────────────── */
+
+  .hero-animate [data-hero-label],
+  .hero-animate [data-hero-title],
+  .hero-animate [data-hero-subtitle],
+  .hero-animate [data-hero-cta],
+  .hero-animate [data-hero-trust],
+  .hero-animate .hero-visual {
+    animation:  none !important;
+    opacity:    1    !important;
+    transform:  none !important;
+    filter:     none !important;
+    transition: none !important;
+  }
+
+  /* ── Card hover — suppress transform, keep outline/shadow for feedback ── */
+
+  .card:hover,
+  .card:focus-within {
+    transform: none !important;
+  }
+
+  .card:hover .card__image,
+  .card:focus-within .card__image {
+    transform: none !important;
+  }
+
+  /* ── Theme transition — instant swap ──────────────────────────────────── */
+
+  .theme-transitioning *,
+  .theme-transitioning *::before,
+  .theme-transitioning *::after {
+    transition: none !important;
+  }
+
+  /* ── Progress bar toast — show full then hide ─────────────────────────── */
+
+  .toast__progress {
+    animation: none !important;
+    transform:  scaleX(0) !important;
+  }
+}

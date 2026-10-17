@@ -1,0 +1,576 @@
+[
+  {
+    "id": "web-development-fundamentals",
+    "title": "Web Development Fundamentals",
+    "titleAr": "أساسيات تطوير الويب",
+    "category": "technology",
+    "level": "beginner",
+    "format": "online",
+    "duration": "10 weeks",
+    "hoursPerWeek": 6,
+    "description": "Master modern HTML5, CSS3, responsive design principles, and vanilla JavaScript to build clean, fast, and accessible websites.",
+    "descriptionAr": "إتقان تقنيات HTML5 وCSS3 الحديثة ومبادئ التصميم المتجاوب وجافاسكريبت لبناء مواقع سريعة وشاملة وسهلة الوصول.",
+    "outcomes": [
+      "Structure semantic accessible HTML documents adhering to WCAG standards",
+      "Design flexible responsive multi-breakpoint layouts using CSS Grid and Flexbox",
+      "Implement client-side interactivity, DOM manipulation, and asynchronous APIs using Vanilla JS",
+      "Deploy production-grade static websites with version control best practices"
+    ],
+    "prerequisites": ["Basic computer literacy", "Interest in software development"],
+    "instructor": {
+      "id": "dr-sarah-khalil",
+      "name": "Dr. Sarah Khalil",
+      "nameAr": "د. سارة خليل",
+      "avatar": "assets/images/faculty-sarah.svg"
+    },
+    "featured": true,
+    "image": "assets/images/course-web-dev.svg",
+    "modules": [
+      {
+        "title": "Module 1: Semantic Web Architecture",
+        "titleAr": "الوحدة 1: البنية الدلالية للويب",
+        "lessons": ["HTML5 Standards & Accessibility", "Forms & Input Validation", "Microdata & SEO Metadata"]
+      },
+      {
+        "title": "Module 2: Modern CSS & Design Systems",
+        "titleAr": "الوحدة 2: أنظمة التصميم وCSS الحديث",
+        "lessons": ["CSS Custom Properties (Tokens)", "Grid & Flexbox Architecture", "Logical Properties for RTL & LTR"]
+      },
+      {
+        "title": "Module 3: Vanilla JavaScript & DOM",
+        "titleAr": "الوحدة 3: جافاسكريبت والتعامل مع DOM",
+        "lessons": ["Data Structures & Functions", "Event-Driven Programming", "Fetch API & Asynchronous Handling"]
+      },
+      {
+        "title": "Module 4: Performance & Deployment",
+        "titleAr": "الوحدة 4: الأداء ونشر المواقع",
+        "lessons": ["Core Web Vitals Optimization", "Static Hosting Platforms", "Production Deployment"]
+      }
+    ],
+    "tags": ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Accessibility"],
+    "enrolled": 1420,
+    "rating": null
+  },
+  {
+    "id": "python-programming",
+    "title": "Python for Data & Problem Solving",
+    "titleAr": "لغة بايثون للبيانات وحل المشكلات",
+    "category": "technology",
+    "level": "beginner",
+    "format": "hybrid",
+    "duration": "12 weeks",
+    "hoursPerWeek": 8,
+    "description": "Learn algorithmic thinking, object-oriented programming, and practical data structures using the versatile Python language.",
+    "descriptionAr": "تعلم التفكير الخوارزمي والبرمجة كائنية التوجه وتراكيب البيانات العملية باستخدام لغة بايثون متعددة الاستخدامات.",
+    "outcomes": [
+      "Understand core computational concepts, algorithms, and OOP paradigms",
+      "Manipulate tabular datasets, parse structured JSON, and handle file I/O",
+      "Build modular CLI tools, automated scripts, and data visualizers",
+      "Apply defensive programming and unit testing principles"
+    ],
+    "prerequisites": ["None; open to beginners"],
+    "instructor": {
+      "id": "eng-tariq-mansoor",
+      "name": "Eng. Tariq Mansoor",
+      "nameAr": "م. طارق منصور",
+      "avatar": "assets/images/faculty-tariq.svg"
+    },
+    "featured": true,
+    "image": "assets/images/course-python.svg",
+    "modules": [
+      {
+        "title": "Module 1: Fundamentals & Control Flow",
+        "titleAr": "الوحدة 1: الأساسيات والتحكم في التدفق",
+        "lessons": ["Variables, Types & Operators", "Conditionals & Iterative Loops", "Functional Decomposition"]
+      },
+      {
+        "title": "Module 2: Data Collections & Algorithms",
+        "titleAr": "الوحدة 2: تراكيب البيانات والخوارزميات",
+        "lessons": ["Lists, Tuples, Dictionaries & Sets", "Searching & Sorting Algorithms", "List Comprehensions & Lambdas"]
+      },
+      {
+        "title": "Module 3: Object-Oriented Architecture",
+        "titleAr": "الوحدة 3: البرمجة الكائنية المعمارية",
+        "lessons": ["Classes, Methods & Encapsulation", "Inheritance & Polymorphism", "Custom Exception Handling"]
+      },
+      {
+        "title": "Module 4: Data Processing & Automation",
+        "titleAr": "الوحدة 4: معالجة البيانات والأتمتة",
+        "lessons": ["File Handling & CSV Parsing", "Interacting with Web APIs", "Final Capstone Project"]
+      }
+    ],
+    "tags": ["Python", "Algorithms", "OOP", "Data Structures"],
+    "enrolled": 1850,
+    "rating": null
+  },
+  {
+    "id": "advanced-mathematics",
+    "title": "Applied Calculus & Linear Algebra",
+    "titleAr": "التفاضل والتكامل التطبيقي والجبر الخطي",
+    "category": "mathematics",
+    "level": "intermediate",
+    "format": "in-person",
+    "duration": "14 weeks",
+    "hoursPerWeek": 7,
+    "description": "Develop rigorous mathematical reasoning through multivariable calculus, matrix transformations, and their applications in modern computing.",
+    "descriptionAr": "تطوير التفكير الرياضي الدقيق من خلال حساب التفاضل والتكامل متعدد المتغيرات وتحويلات المصفوفات وتطبيقاتها التقنية.",
+    "outcomes": [
+      "Perform vector operations, eigenvalues, and matrix factorizations",
+      "Evaluate partial derivatives, gradient vectors, and optimization surfaces",
+      "Formulate mathematical models for engineering and algorithmic systems",
+      "Apply analytic and numerical solving techniques"
+    ],
+    "prerequisites": ["Secondary school calculus or pre-calculus"],
+    "instructor": {
+      "id": "prof-elena-rostova",
+      "name": "Prof. Elena Rostova",
+      "nameAr": "بروفيسور إيلينا روستوفا",
+      "avatar": "assets/images/faculty-elena.svg"
+    },
+    "featured": true,
+    "image": "assets/images/course-math.svg",
+    "modules": [
+      {
+        "title": "Module 1: Vector Spaces & Matrices",
+        "titleAr": "الوحدة 1: الفضاءات المتجهية والمصفوفات",
+        "lessons": ["Linear Independence & Subspaces", "Matrix Transformations", "Systems of Linear Equations"]
+      },
+      {
+        "title": "Module 2: Multivariable Differentiation",
+        "titleAr": "الوحدة 2: التفاضل متعدد المتغيرات",
+        "lessons": ["Directional Derivatives & Gradients", "Hessians & Optimization Surfaces", "Constrained Optimization"]
+      },
+      {
+        "title": "Module 3: Eigenvalues & Decomposition",
+        "titleAr": "الوحدة 3: القيم الذاتية والتفكيك",
+        "lessons": ["Spectral Theorem & Diagonalization", "Singular Value Decomposition (SVD)", "Principal Component Analysis Theory"]
+      }
+    ],
+    "tags": ["Calculus", "Linear Algebra", "Mathematics", "Vectors"],
+    "enrolled": 920,
+    "rating": null
+  },
+  {
+    "id": "arabic-language-mastery",
+    "title": "Modern Arabic Rhetoric & Composition",
+    "titleAr": "البلاغة والإنشاء في اللغة العربية الحديثة",
+    "category": "languages",
+    "level": "intermediate",
+    "format": "online",
+    "duration": "8 weeks",
+    "hoursPerWeek": 5,
+    "description": "Refine rhetorical expression, academic writing eloquence, and syntactic accuracy across classical and contemporary Arabic literature.",
+    "descriptionAr": "صقل مهارات البلاغة والبيان والكتابة الأكاديمية وصحة التراكيب النحوية في سياقات الأدب العربي الحديث والتقليدي.",
+    "outcomes": [
+      "Compose persuasive academic and professional essays with precision",
+      "Analyze rhetorical figures of speech, semantic nuance, and poetic meter",
+      "Master advanced syntactic parsing and punctuation conventions",
+      "Critique contemporary journalistic and literary prose"
+    ],
+    "prerequisites": ["Intermediate reading and writing fluency in Arabic"],
+    "instructor": {
+      "id": "dr-ahmad-al-hashimi",
+      "name": "Dr. Ahmad Al-Hashimi",
+      "nameAr": "د. أحمد الهاشمي",
+      "avatar": "assets/images/faculty-ahmad.svg"
+    },
+    "featured": true,
+    "image": "assets/images/course-arabic.svg",
+    "modules": [
+      {
+        "title": "Module 1: Syntactic Precision",
+        "titleAr": "الوحدة 1: الضبط النحوي والأساليب",
+        "lessons": ["الإعراب التقديري والمحلي", "أساليب التوكيد والحصر", "التراكيب المعقدة والروابط النصية"]
+      },
+      {
+        "title": "Module 2: Rhetoric & Stylistics",
+        "titleAr": "الوحدة 2: علوم البلاغة والبيان",
+        "lessons": ["علم المعاني ومطابقة مقتضى الحال", "البيان: التشبيه والمجاز والاستعارة", "علم البديع والمحسنات المعنوية"]
+      },
+      {
+        "title": "Module 3: Academic Prose",
+        "titleAr": "الوحدة 3: الإنشاء والبحث الأكاديمي",
+        "lessons": ["هيكلة المقال البحثي الرصين", "المراجعة التحريرية وعلامات الترقيم", "عرض الأطروحات والمناقشة النقدية"]
+      }
+    ],
+    "tags": ["Arabic", "Literature", "Writing", "Rhetoric"],
+    "enrolled": 1150,
+    "rating": null
+  },
+  {
+    "id": "introduction-to-physics",
+    "title": "Foundational Classical & Quantum Physics",
+    "titleAr": "مبادئ الفيزياء الكلاسيكية والكمية",
+    "category": "sciences",
+    "level": "beginner",
+    "format": "in-person",
+    "duration": "12 weeks",
+    "hoursPerWeek": 6,
+    "description": "Investigate physical mechanics, thermodynamics, wave equations, and introductory quantum principles with hands-on laboratory inquiry.",
+    "descriptionAr": "استكشاف الميكانيكا الكلاسيكية والديناميكا الحرارية ومعادلات الموجات ومقدمة نظرية الكم عبر التجارب المعملية الاستقصائية.",
+    "outcomes": [
+      "Model Newtonian mechanics, kinematic trajectories, and momentum conservation",
+      "Quantify thermal equilibrium, entropy, and thermodynamic work",
+      "Interpret electromagnetic spectra and wave-particle duality concepts",
+      "Conduct empirical laboratory measurements and propagate uncertainties"
+    ],
+    "prerequisites": ["Secondary school algebra and basic trigonometry"],
+    "instructor": {
+      "id": "prof-elena-rostova",
+      "name": "Prof. Elena Rostova",
+      "nameAr": "بروفيسور إيلينا روستوفا",
+      "avatar": "assets/images/faculty-elena.svg"
+    },
+    "featured": false,
+    "image": "assets/images/course-physics.svg",
+    "modules": [
+      {
+        "title": "Module 1: Mechanics & Dynamics",
+        "titleAr": "الوحدة 1: الميكانيكا والديناميكا",
+        "lessons": ["Newtonian Laws of Motion", "Work, Energy & Power Theorems", "Rotational Dynamics & Gravity"]
+      },
+      {
+        "title": "Module 2: Waves & Thermodynamics",
+        "titleAr": "الوحدة 2: الموجات والديناميكا الحرارية",
+        "lessons": ["Harmonic Oscillations & Acoustic Waves", "The Laws of Thermodynamics", "Heat Engines & Entropy"]
+      },
+      {
+        "title": "Module 3: Modern Physics Insights",
+        "titleAr": "الوحدة 3: إشراقات في الفيزياء الحديثة",
+        "lessons": ["Photoelectric Effect & Photons", "Atomic Orbitals & Spectral Lines", "Introduction to Relativity"]
+      }
+    ],
+    "tags": ["Physics", "Mechanics", "Thermodynamics", "Sciences"],
+    "enrolled": 680,
+    "rating": null
+  },
+  {
+    "id": "graphic-design-essentials",
+    "title": "Graphic Design & Visual Communication",
+    "titleAr": "أساسيات التصميم الجرافيكي والتواصل البصري",
+    "category": "arts",
+    "level": "beginner",
+    "format": "online",
+    "duration": "8 weeks",
+    "hoursPerWeek": 5,
+    "description": "Explore color theory, typographic hierarchy, composition grids, and brand asset crafting for digital and print media.",
+    "descriptionAr": "استكشاف نظرية الألوان، التدرج الطباعي، شبكات التكوين، وتصميم هويات العلامات التجارية للوسائط الرقمية والمطبوعة.",
+    "outcomes": [
+      "Construct visual hierarchy through intentional scale, contrast, and alignment",
+      "Apply harmonious color schemes that meet accessibility contrast ratios",
+      "Select and pair Latin and Arabic typographic font families thoughtfully",
+      "Design comprehensive brand identity guidelines and digital design collateral"
+    ],
+    "prerequisites": ["No prior design software experience required"],
+    "instructor": {
+      "id": "nour-al-din-haddad",
+      "name": "Nour Al-Din Haddad",
+      "nameAr": "نور الدين حداد",
+      "avatar": "assets/images/faculty-nour.svg"
+    },
+    "featured": false,
+    "image": "assets/images/course-design.svg",
+    "modules": [
+      {
+        "title": "Module 1: Fundamentals of Visual Composition",
+        "titleAr": "الوحدة 1: أسس التكوين البصري",
+        "lessons": ["Gestalt Principles in Modern Design", "Grid Systems & Layout Geometry", "White Space & Visual Rhythm"]
+      },
+      {
+        "title": "Module 2: Typography & Chromatics",
+        "titleAr": "الوحدة 2: فنون الخط والألوان",
+        "lessons": ["Type Anatomy & Bilingual Pairing", "Color Psychology & Accessible Palettes", "Scalable Vector Graphic Creation"]
+      },
+      {
+        "title": "Module 3: Identity & Production",
+        "titleAr": "الوحدة 3: الهوية والإنتاج النهائي",
+        "lessons": ["Logo Formulation & Brand Systems", "Print vs Digital Delivery Standards", "Portfolio Assembly & Presentation"]
+      }
+    ],
+    "tags": ["Design", "Typography", "Branding", "Visual Arts"],
+    "enrolled": 1210,
+    "rating": null
+  },
+  {
+    "id": "english-academic-writing",
+    "title": "Academic Writing & Research Methods",
+    "titleAr": "الكتابة الأكاديمية ومناهج البحث العلمي",
+    "category": "languages",
+    "level": "intermediate",
+    "format": "hybrid",
+    "duration": "10 weeks",
+    "hoursPerWeek": 5,
+    "description": "Synthesize scholarly sources, construct logical argumentative frameworks, and adhere to publication citation standards.",
+    "descriptionAr": "توليف المصادر العلمية، بناء الأطر الجدلية المنطقية، والالتزام بمعايير التوثيق والنشر الأكاديمي العالمية.",
+    "outcomes": [
+      "Formulate robust research hypotheses and structured thesis statements",
+      "Execute peer-reviewed literature reviews and source syntheses",
+      "Master APA and MLA citation protocols to maintain academic integrity",
+      "Draft concise, peer-review-ready scientific research manuscripts"
+    ],
+    "prerequisites": ["Intermediate English proficiency (CEFR B2 or equivalent)"],
+    "instructor": {
+      "id": "dr-sarah-khalil",
+      "name": "Dr. Sarah Khalil",
+      "nameAr": "د. سارة خليل",
+      "avatar": "assets/images/faculty-sarah.svg"
+    },
+    "featured": false,
+    "image": "assets/images/course-writing.svg",
+    "modules": [
+      {
+        "title": "Module 1: Thesis & Source Synthesis",
+        "titleAr": "الوحدة 1: الأطروحة وتوليف المصادر",
+        "lessons": ["Scholarly Database Navigation", "Evaluating Evidence Credibility", "Formulating Central Hypotheses"]
+      },
+      {
+        "title": "Module 2: Argumentation Structure",
+        "titleAr": "الوحدة 2: هيكلية البناء الجدلي",
+        "lessons": ["Paragraph Cohesion & Transitional Markers", "Counter-argument Rebuttal Strategies", "Academic Register & Tone Control"]
+      },
+      {
+        "title": "Module 3: Citations & Publication",
+        "titleAr": "الوحدة 3: التوثيق ومسار النشر",
+        "lessons": ["APA & Chicago Citation Mastery", "Peer-Review Revision Loops", "Scholarly Abstract Formulation"]
+      }
+    ],
+    "tags": ["English", "Academic Writing", "Research", "Research Methods"],
+    "enrolled": 890,
+    "rating": null
+  },
+  {
+    "id": "business-communication",
+    "title": "Executive Business Communication",
+    "titleAr": "التواصل المؤسسي والتنفيذي الفعّال",
+    "category": "business",
+    "level": "intermediate",
+    "format": "online",
+    "duration": "6 weeks",
+    "hoursPerWeek": 4,
+    "description": "Sharpen persuasive stakeholder pitching, diplomatic negotiation techniques, and boardroom presentation fluency.",
+    "descriptionAr": "صقل مهارات العرض والإقناع أمام أصحاب المصلحة، تقنيات التفاوض الدبلوماسي، والتحدث المؤسسي المؤثر.",
+    "outcomes": [
+      "Deliver structured executive briefings and concise business memos",
+      "Navigate cross-cultural negotiations with diplomatic precision",
+      "Design compelling data-driven executive slide decks",
+      "Manage critical crisis communications with composure"
+    ],
+    "prerequisites": ["General communication proficiency"],
+    "instructor": {
+      "id": "omar-al-fassi",
+      "name": "Omar Al-Fassi",
+      "nameAr": "عمر الفاسي",
+      "avatar": "assets/images/faculty-omar.svg"
+    },
+    "featured": false,
+    "image": "assets/images/course-business.svg",
+    "modules": [
+      {
+        "title": "Module 1: Executive Writing & Clarity",
+        "titleAr": "الوحدة 1: الكتابة التنفيذية والوضوح",
+        "lessons": ["The Minto Pyramid Principle", "Actionable Status Reports", "High-Stakes Email Etiquette"]
+      },
+      {
+        "title": "Module 2: Strategic Verbal Presentation",
+        "titleAr": "الوحدة 2: العروض التقديمية الاستراتيجية",
+        "lessons": ["Storytelling with Financial Data", "Audience Engagement in Hybrid Rooms", "Handling Hostile Q&A Sessions"]
+      },
+      {
+        "title": "Module 3: Negotiation & Diplomacy",
+        "titleAr": "الوحدة 3: التفاوض والدبلوماسية",
+        "lessons": ["Principled Negotiation Frameworks", "Non-Verbal Nuance & Micro-Expressions", "Consensus Building Across Teams"]
+      }
+    ],
+    "tags": ["Business", "Leadership", "Communication", "Management"],
+    "enrolled": 760,
+    "rating": null
+  },
+  {
+    "id": "digital-marketing",
+    "title": "Digital Growth & Analytics Strategy",
+    "titleAr": "استراتيجيات النمو الرقمي وتحليل البيانات",
+    "category": "business",
+    "level": "beginner",
+    "format": "hybrid",
+    "duration": "8 weeks",
+    "hoursPerWeek": 5,
+    "description": "Understand omnichannel acquisition funnels, search engine optimization (SEO), performance marketing, and conversion telemetry.",
+    "descriptionAr": "فهم مسارات اكتساب العملاء متعددة القنوات، تحسين محركات البحث، التسويق القائم على الأداء وقياس التحويلات الرقمية.",
+    "outcomes": [
+      "Construct conversion funnels from awareness to customer retention",
+      "Audit technical and on-page SEO metrics using modern diagnostic tools",
+      "Run targeted performance marketing campaigns with budget discipline",
+      "Synthesize analytics data into strategic executive growth dashboards"
+    ],
+    "prerequisites": ["Basic web and social media familiarity"],
+    "instructor": {
+      "id": "omar-al-fassi",
+      "name": "Omar Al-Fassi",
+      "nameAr": "عمر الفاسي",
+      "avatar": "assets/images/faculty-omar.svg"
+    },
+    "featured": false,
+    "image": "assets/images/course-marketing.svg",
+    "modules": [
+      {
+        "title": "Module 1: Search Architecture & Technical SEO",
+        "titleAr": "الوحدة 1: بنية محركات البحث والـ SEO التقني",
+        "lessons": ["Crawlability, Indexing & Sitemaps", "Keyword Intent & Content Modeling", "Core Web Vitals Impact on Ranking"]
+      },
+      {
+        "title": "Module 2: Performance Marketing & Paid Funnels",
+        "titleAr": "الوحدة 2: التسويق الموجه والميزانيات",
+        "lessons": ["Search & Display Campaign Mechanics", "Audience Segmentation & Lookalikes", "A/B Testing Copy & Creative Assets"]
+      },
+      {
+        "title": "Module 3: Analytics & Retention Telemetry",
+        "titleAr": "الوحدة 3: التحليلات ونماذج الاحتفاظ",
+        "lessons": ["Attribution Modeling Paradigms", "Customer Lifetime Value (LTV) Calculation", "Building Real-Time Performance Dashboards"]
+      }
+    ],
+    "tags": ["Marketing", "SEO", "Analytics", "Growth"],
+    "enrolled": 1340,
+    "rating": null
+  },
+  {
+    "id": "chemistry-foundations",
+    "title": "Foundations of Chemical Equilibrium & Organic Synthesis",
+    "titleAr": "أسس التوازن الكيميائي والتخليق العضوي",
+    "category": "sciences",
+    "level": "intermediate",
+    "format": "in-person",
+    "duration": "12 weeks",
+    "hoursPerWeek": 7,
+    "description": "Examine atomic orbital geometry, chemical reaction kinetics, thermodynamics of equilibrium, and organic reaction mechanisms.",
+    "descriptionAr": "دراسة هندسة المدارات الذرية، حركية التفاعلات الكيميائية، ديناميكا التوازن، وآليات تفاعلات الكيمياء العضوية.",
+    "outcomes": [
+      "Predict molecular geometry using VSEPR and hybridization models",
+      "Calculate reaction rates, equilibrium constants, and activation energies",
+      "Diagram nucleophilic and electrophilic reaction mechanisms",
+      "Operate laboratory titration and spectroscopy apparatus safely"
+    ],
+    "prerequisites": ["General chemistry and basic algebra"],
+    "instructor": {
+      "id": "prof-elena-rostova",
+      "name": "Prof. Elena Rostova",
+      "nameAr": "بروفيسور إيلينا روستوفا",
+      "avatar": "assets/images/faculty-elena.svg"
+    },
+    "featured": false,
+    "image": "assets/images/course-chemistry.svg",
+    "modules": [
+      {
+        "title": "Module 1: Thermochemistry & Dynamic Kinetics",
+        "titleAr": "الوحدة 1: الكيمياء الحرارية والحركية",
+        "lessons": ["Enthalpy, Entropy & Gibbs Free Energy", "Rate Laws & Collision Theory", "Equilibrium Shift & Le Chatelier's Principle"]
+      },
+      {
+        "title": "Module 2: Organic Functional Groups",
+        "titleAr": "الوحدة 2: المجموعات الوظيفية العضوية",
+        "lessons": ["Alkanes, Alkenes & Stereochemistry", "Functional Groups & Nucleophiles", "Addition and Substitution Pathways"]
+      },
+      {
+        "title": "Module 3: Analytical Methods & Spectroscopy",
+        "titleAr": "الوحدة 3: الطرق التحليلية والمطيافية",
+        "lessons": ["Infrared (IR) Spectral Interpretation", "Nuclear Magnetic Resonance (NMR) Basics", "Quantitative Acid-Base Titration"]
+      }
+    ],
+    "tags": ["Chemistry", "Organic Chemistry", "Laboratory", "Science"],
+    "enrolled": 540,
+    "rating": null
+  },
+  {
+    "id": "data-analysis-excel",
+    "title": "Data Modeling & Analytical Insights",
+    "titleAr": "نمذجة البيانات واستخلاص الرؤى التحليلية",
+    "category": "technology",
+    "level": "beginner",
+    "format": "online",
+    "duration": "6 weeks",
+    "hoursPerWeek": 5,
+    "description": "Transform messy raw datasets into decision-grade reports using dynamic formulas, pivot tables, and statistical validation.",
+    "descriptionAr": "تحويل البيانات الأولية إلى تقارير استراتيجية داعمة للقرار باستخدام الصيغ الديناميكية والجداول المحورية والتحليل الإحصائي.",
+    "outcomes": [
+      "Cleanse and transform unstructured datasets using automated data tools",
+      "Deploy complex lookup, logic, and multi-criteria array formulas",
+      "Construct interactive analytical dashboards with drill-down slicers",
+      "Apply descriptive statistical measures to validate trends"
+    ],
+    "prerequisites": ["Familiarity with spreadsheets"],
+    "instructor": {
+      "id": "eng-tariq-mansoor",
+      "name": "Eng. Tariq Mansoor",
+      "nameAr": "م. طارق منصور",
+      "avatar": "assets/images/faculty-tariq.svg"
+    },
+    "featured": false,
+    "image": "assets/images/course-data.svg",
+    "modules": [
+      {
+        "title": "Module 1: Advanced Analytical Formulations",
+        "titleAr": "الوحدة 1: الصيغ والمعادلات المتقدمة",
+        "lessons": ["Dynamic Array Formulas & XLOOKUP", "Logical Nesting & Conditional Math", "Text Parsing & Date Serial Calculation"]
+      },
+      {
+        "title": "Module 2: Multidimensional Pivot Modeling",
+        "titleAr": "الوحدة 2: النمذجة بالجداول المحورية",
+        "lessons": ["Data Normalization Best Practices", "Calculated Fields & Grouped Hierarchies", "Interactive Dashboard Slicers"]
+      },
+      {
+        "title": "Module 3: Statistical Synthesis & Visuals",
+        "titleAr": "الوحدة 3: التحليل الإحصائي والتصور البياني",
+        "lessons": ["Trendlines, Outliers & Moving Averages", "Chart Selection for Executive Audiences", "Automating Workflow Audits"]
+      }
+    ],
+    "tags": ["Data Analysis", "Spreadsheets", "Statistics", "Productivity"],
+    "enrolled": 1650,
+    "rating": null
+  },
+  {
+    "id": "critical-thinking-logic",
+    "title": "Formal Logic & Critical Inquiry",
+    "titleAr": "المنطق الصوري والتفكير النقدي المنهجي",
+    "category": "mathematics",
+    "level": "intermediate",
+    "format": "online",
+    "duration": "8 weeks",
+    "hoursPerWeek": 4,
+    "description": "Analyze deductive validity, expose informal cognitive fallacies, and develop disciplined dialectical problem-solving habits.",
+    "descriptionAr": "تحليل صحة الاستدلال الاستنباطي، كشف المغالطات المنطقية المعرفية، وتطوير عادات التفكير المنهجي والجدلي.",
+    "outcomes": [
+      "Diagram propositional truth tables and validate syllogistic forms",
+      "Identify over 25 common informal cognitive and argumentative fallacies",
+      "Structure persuasive philosophical and analytical debates",
+      "Make sound decisions under cognitive bias and incomplete information"
+    ],
+    "prerequisites": ["Open to all inquisitive minds"],
+    "instructor": {
+      "id": "dr-ahmad-al-hashimi",
+      "name": "Dr. Ahmad Al-Hashimi",
+      "nameAr": "د. أحمد الهاشمي",
+      "avatar": "assets/images/faculty-ahmad.svg"
+    },
+    "featured": false,
+    "image": "assets/images/course-logic.svg",
+    "modules": [
+      {
+        "title": "Module 1: Propositional Logic & Truth",
+        "titleAr": "الوحدة 1: المنطق القضيوي وجداول الصدق",
+        "lessons": ["Premises, Inferences & Conclusions", "Conjunction, Disjunction & Negation", "Modus Ponens, Modus Tollens & Validity"]
+      },
+      {
+        "title": "Module 2: Dialectics & Fallacy Detection",
+        "titleAr": "الوحدة 2: الجدل وكشف المغالطات",
+        "lessons": ["Ad Hominem, Straw Man & False Dilemmas", "Statistical Fallacies & Post Hoc Logic", "Cognitive Biases in Decision Making"]
+      },
+      {
+        "title": "Module 3: Ethical Reasoning & Argumentation",
+        "titleAr": "الوحدة 3: التفكير الأخلاقي والمناظرة",
+        "lessons": ["Normative Ethics Frameworks", "Constructing Resilient Counter-Arguments", "Discourse Ethics in the Digital Age"]
+      }
+    ],
+    "tags": ["Logic", "Philosophy", "Critical Thinking", "Humanities"],
+    "enrolled": 810,
+    "rating": null
+  }
+]

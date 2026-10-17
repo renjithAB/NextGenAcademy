@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://nextgenacademy.edu/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgenacademy.edu/index.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://nextgenacademy.edu/index.html?lang=ar" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://nextgenacademy.edu/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgenacademy.edu/about.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://nextgenacademy.edu/about.html?lang=ar" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextgenacademy.edu/courses.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgenacademy.edu/courses.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://nextgenacademy.edu/courses.html?lang=ar" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nextgenacademy.edu/course-details.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgenacademy.edu/course-details.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://nextgenacademy.edu/course-details.html?lang=ar" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextgenacademy.edu/admissions.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgenacademy.edu/admissions.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://nextgenacademy.edu/admissions.html?lang=ar" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://nextgenacademy.edu/faculty.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgenacademy.edu/faculty.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://nextgenacademy.edu/faculty.html?lang=ar" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nextgenacademy.edu/student-life.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgenacademy.edu/student-life.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://nextgenacademy.edu/student-life.html?lang=ar" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nextgenacademy.edu/resources.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgenacademy.edu/resources.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://nextgenacademy.edu/resources.html?lang=ar" />
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nextgenacademy.edu/events.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgenacademy.edu/events.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://nextgenacademy.edu/events.html?lang=ar" />
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://nextgenacademy.edu/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgenacademy.edu/faq.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://nextgenacademy.edu/faq.html?lang=ar" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://nextgenacademy.edu/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nextgenacademy.edu/contact.html" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://nextgenacademy.edu/contact.html?lang=ar" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://nextgenacademy.edu/privacy-policy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://nextgenacademy.edu/terms.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://nextgenacademy.edu/accessibility.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+</urlset>

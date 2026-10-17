@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light" data-title-key="faculty.title">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faculty & Academic Leadership — Next Gen Academy</title>
+  <meta name="description" content="Meet the distinguished educators, research fellows, and studio practitioners mentoring students at Next Gen Academy.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <script src="js/theme.js"></script>
+  <script src="js/utilities.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/navigation.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/forms.js" defer></script>
+  <script src="js/courses.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body class="page-wrapper">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container flex-between">
+      <a href="index.html" class="nav__logo" aria-label="Next Gen Academy Home">
+        <span class="nav__logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+            <rect width="32" height="32" rx="8" fill="currentColor"/>
+            <path d="M9 23V9l7 9 7-9v14" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="nav__logo-text">Next Gen <span>Academy</span></span>
+      </a>
+
+      <nav class="nav__menu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav__link" data-i18n="nav.home">Home</a>
+        <a href="about.html" class="nav__link" data-i18n="nav.about">About</a>
+        <a href="courses.html" class="nav__link" data-i18n="nav.courses">Courses</a>
+        <a href="admissions.html" class="nav__link" data-i18n="nav.admissions">Admissions</a>
+        <a href="faculty.html" class="nav__link active" data-i18n="nav.faculty">Faculty</a>
+        <a href="student-life.html" class="nav__link" data-i18n="nav.studentLife">Student Life</a>
+        <a href="resources.html" class="nav__link" data-i18n="nav.resources">Resources</a>
+        <a href="events.html" class="nav__link" data-i18n="nav.events">Events</a>
+        <a href="faq.html" class="nav__link" data-i18n="nav.faq">FAQ</a>
+        <a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="nav__desktop-actions flex" style="align-items: center; gap: var(--space-3);">
+        <div class="dropdown" data-lang-toggle>
+          <button type="button" class="btn btn--outline btn--sm" data-lang-toggle-btn aria-label="Toggle language">
+            🌐 <span data-lang-current>EN</span>
+          </button>
+        </div>
+        <div class="dropdown">
+          <button type="button" class="btn btn--outline btn--sm btn--icon" data-theme-cycle aria-label="Toggle visual theme">
+            <span class="theme-icon">☀️</span>
+          </button>
+        </div>
+        <a href="admissions.html" class="btn btn--primary btn--sm" data-i18n="nav.applyNow">Apply Now</a>
+      </div>
+
+      <button type="button" class="nav__hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="nav__mobile-overlay" hidden></div>
+  <div class="nav__mobile-menu" id="mobile-nav" hidden aria-hidden="true">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-block-end: var(--space-6);">
+      <span class="nav__logo-text">Next Gen <span>Academy</span></span>
+      <button type="button" class="btn btn--ghost btn--icon" onclick="Navigation.closeMobileMenu()" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="flex-col gap-4" style="margin-block-end: var(--space-8);">
+      <a href="index.html" class="nav__link" data-i18n="nav.home">Home</a>
+      <a href="about.html" class="nav__link" data-i18n="nav.about">About</a>
+      <a href="courses.html" class="nav__link" data-i18n="nav.courses">Courses</a>
+      <a href="admissions.html" class="nav__link" data-i18n="nav.admissions">Admissions</a>
+      <a href="faculty.html" class="nav__link active" data-i18n="nav.faculty">Faculty</a>
+      <a href="student-life.html" class="nav__link" data-i18n="nav.studentLife">Student Life</a>
+      <a href="resources.html" class="nav__link" data-i18n="nav.resources">Resources</a>
+      <a href="events.html" class="nav__link" data-i18n="nav.events">Events</a>
+      <a href="faq.html" class="nav__link" data-i18n="nav.faq">FAQ</a>
+      <a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a>
+    </nav>
+  </div>
+
+  <main class="page-main" id="main-content">
+    <header class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <div class="breadcrumb__item">
+            <a href="index.html" class="breadcrumb__link" data-i18n="nav.home">Home</a>
+            <span class="breadcrumb__separator">/</span>
+          </div>
+          <div class="breadcrumb__item">
+            <span class="breadcrumb__current" aria-current="page" data-i18n="nav.faculty">Faculty</span>
+          </div>
+        </nav>
+        <span class="page-hero__label" data-i18n="faculty.title">Academic Leadership</span>
+        <h1 class="page-hero__title" data-i18n="faculty.title">Our Distinguished Faculty</h1>
+        <p class="page-hero__description" data-i18n="faculty.description">
+          Mentored by educators and practitioners dedicated to scientific inquiry, intellectual rigor, and student empowerment.
+        </p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <!-- Faculty Grid -->
+        <div class="faculty-grid" id="faculty-list">
+          <!-- Dr. Sarah Khalil -->
+          <article class="faculty-card card card--bordered" data-reveal>
+            <div class="card__body flex-col" style="align-items: center; text-align: center;">
+              <img src="assets/images/faculty-sarah.svg" alt="Dr. Sarah Khalil" class="faculty-card__avatar" width="100" height="100" style="border-radius: var(--radius-full); margin-block-end: var(--space-4);">
+              <h2 style="font-size: var(--font-xl); margin-block-end: var(--space-1);">Dr. Sarah Khalil</h2>
+              <p style="font-size: var(--font-sm); color: var(--color-primary); font-weight: var(--weight-medium); margin-block-end: var(--space-2);">Head of Computer Science</p>
+              <p style="font-size: var(--font-xs); color: var(--color-text-muted); margin-block-end: var(--space-4);">Computer Science & Engineering</p>
+              <p style="font-size: var(--font-sm); color: var(--color-text-secondary); margin-block-end: var(--space-4); line-height: var(--leading-relaxed);">
+                Specializes in accessible web architectures, distributed systems, and software engineering pedagogy. Over a decade advancing inclusive digital education.
+              </p>
+              <div class="flex-wrap" style="justify-content: center; gap: var(--space-1); margin-block-end: var(--space-4);">
+                <span class="badge badge--sm">Web Systems</span>
+                <span class="badge badge--sm">WCAG AA</span>
+                <span class="badge badge--sm">Architecture</span>
+              </div>
+              <a href="courses.html" class="btn btn--outline btn--sm" style="margin-block-start: auto;">View Taught Courses</a>
+            </div>
+          </article>
+
+          <!-- Eng. Tariq Mansoor -->
+          <article class="faculty-card card card--bordered" data-reveal data-reveal-delay="1">
+            <div class="card__body flex-col" style="align-items: center; text-align: center;">
+              <img src="assets/images/faculty-tariq.svg" alt="Eng. Tariq Mansoor" class="faculty-card__avatar" width="100" height="100" style="border-radius: var(--radius-full); margin-block-end: var(--space-4);">
+              <h2 style="font-size: var(--font-xl); margin-block-end: var(--space-1);">Eng. Tariq Mansoor</h2>
+              <p style="font-size: var(--font-sm); color: var(--color-primary); font-weight: var(--weight-medium); margin-block-end: var(--space-2);">Lead Instructor, Data Science</p>
+              <p style="font-size: var(--font-xs); color: var(--color-text-muted); margin-block-end: var(--space-4);">Computer Science & Engineering</p>
+              <p style="font-size: var(--font-sm); color: var(--color-text-secondary); margin-block-end: var(--space-4); line-height: var(--leading-relaxed);">
+                Experienced industry leader across cloud telemetry, Python pipeline design, and algorithmic optimization for high-throughput computing.
+              </p>
+              <div class="flex-wrap" style="justify-content: center; gap: var(--space-1); margin-block-end: var(--space-4);">
+                <span class="badge badge--sm">Python</span>
+                <span class="badge badge--sm">Data Engineering</span>
+                <span class="badge badge--sm">Cloud</span>
+              </div>
+              <a href="courses.html" class="btn btn--outline btn--sm" style="margin-block-start: auto;">View Taught Courses</a>
+            </div>
+          </article>
+
+          <!-- Prof. Elena Rostova -->
+          <article class="faculty-card card card--bordered" data-reveal data-reveal-delay="2">
+            <div class="card__body flex-col" style="align-items: center; text-align: center;">
+              <img src="assets/images/faculty-elena.svg" alt="Prof. Elena Rostova" class="faculty-card__avatar" width="100" height="100" style="border-radius: var(--radius-full); margin-block-end: var(--space-4);">
+              <h2 style="font-size: var(--font-xl); margin-block-end: var(--space-1);">Prof. Elena Rostova</h2>
+              <p style="font-size: var(--font-sm); color: var(--color-primary); font-weight: var(--weight-medium); margin-block-end: var(--space-2);">Chair of Applied Sciences</p>
+              <p style="font-size: var(--font-xs); color: var(--color-text-muted); margin-block-end: var(--space-4);">Natural Sciences & Mathematics</p>
+              <p style="font-size: var(--font-sm); color: var(--color-text-secondary); margin-block-end: var(--space-4); line-height: var(--leading-relaxed);">
+                Conducts research at the intersection of mathematical physics and computational chemistry, instilling students with experimental rigor.
+              </p>
+              <div class="flex-wrap" style="justify-content: center; gap: var(--space-1); margin-block-end: var(--space-4);">
+                <span class="badge badge--sm">Calculus</span>
+                <span class="badge badge--sm">Linear Algebra</span>
+                <span class="badge badge--sm">Physics</span>
+              </div>
+              <a href="courses.html" class="btn btn--outline btn--sm" style="margin-block-start: auto;">View Taught Courses</a>
+            </div>
+          </article>
+
+          <!-- Dr. Ahmad Al-Hashimi -->
+          <article class="faculty-card card card--bordered" data-reveal data-reveal-delay="3">
+            <div class="card__body flex-col" style="align-items: center; text-align: center;">
+              <img src="assets/images/faculty-ahmad.svg" alt="Dr. Ahmad Al-Hashimi" class="faculty-card__avatar" width="100" height="100" style="border-radius: var(--radius-full); margin-block-end: var(--space-4);">
+              <h2 style="font-size: var(--font-xl); margin-block-end: var(--space-1);">Dr. Ahmad Al-Hashimi</h2>
+              <p style="font-size: var(--font-sm); color: var(--color-primary); font-weight: var(--weight-medium); margin-block-end: var(--space-2);">Professor of Linguistics</p>
+              <p style="font-size: var(--font-xs); color: var(--color-text-muted); margin-block-end: var(--space-4);">Humanities & Languages</p>
+              <p style="font-size: var(--font-sm); color: var(--color-text-secondary); margin-block-end: var(--space-4); line-height: var(--leading-relaxed);">
+                Scholar dedicated to revitalizing Arabic syntactic aesthetics, dialectical logic, and international cross-cultural philosophical discourse.
+              </p>
+              <div class="flex-wrap" style="justify-content: center; gap: var(--space-1); margin-block-end: var(--space-4);">
+                <span class="badge badge--sm">Arabic Syntax</span>
+                <span class="badge badge--sm">Rhetoric</span>
+                <span class="badge badge--sm">Formal Logic</span>
+              </div>
+              <a href="courses.html" class="btn btn--outline btn--sm" style="margin-block-start: auto;">View Taught Courses</a>
+            </div>
+          </article>
+
+          <!-- Nour Al-Din Haddad -->
+          <article class="faculty-card card card--bordered" data-reveal>
+            <div class="card__body flex-col" style="align-items: center; text-align: center;">
+              <img src="assets/images/faculty-nour.svg" alt="Nour Al-Din Haddad" class="faculty-card__avatar" width="100" height="100" style="border-radius: var(--radius-full); margin-block-end: var(--space-4);">
+              <h2 style="font-size: var(--font-xl); margin-block-end: var(--space-1);">Nour Al-Din Haddad</h2>
+              <p style="font-size: var(--font-sm); color: var(--color-primary); font-weight: var(--weight-medium); margin-block-end: var(--space-2);">Creative Director & Lecturer</p>
+              <p style="font-size: var(--font-xs); color: var(--color-text-muted); margin-block-end: var(--space-4);">Arts & Creative Media</p>
+              <p style="font-size: var(--font-sm); color: var(--color-text-secondary); margin-block-end: var(--space-4); line-height: var(--leading-relaxed);">
+                Combines design systems with bilingual typography, guiding students to communicate high-impact ideas through minimalist visual compositions.
+              </p>
+              <div class="flex-wrap" style="justify-content: center; gap: var(--space-1); margin-block-end: var(--space-4);">
+                <span class="badge badge--sm">Typography</span>
+                <span class="badge badge--sm">Design Systems</span>
+                <span class="badge badge--sm">Branding</span>
+              </div>
+              <a href="courses.html" class="btn btn--outline btn--sm" style="margin-block-start: auto;">View Taught Courses</a>
+            </div>
+          </article>
+
+          <!-- Omar Al-Fassi -->
+          <article class="faculty-card card card--bordered" data-reveal data-reveal-delay="1">
+            <div class="card__body flex-col" style="align-items: center; text-align: center;">
+              <img src="assets/images/faculty-omar.svg" alt="Omar Al-Fassi" class="faculty-card__avatar" width="100" height="100" style="border-radius: var(--radius-full); margin-block-end: var(--space-4);">
+              <h2 style="font-size: var(--font-xl); margin-block-end: var(--space-1);">Omar Al-Fassi</h2>
+              <p style="font-size: var(--font-sm); color: var(--color-primary); font-weight: var(--weight-medium); margin-block-end: var(--space-2);">Senior Lecturer in Strategy</p>
+              <p style="font-size: var(--font-xs); color: var(--color-text-muted); margin-block-end: var(--space-4);">Business & Leadership</p>
+              <p style="font-size: var(--font-sm); color: var(--color-text-secondary); margin-block-end: var(--space-4); line-height: var(--leading-relaxed);">
+                With leadership tenures across global strategy consulting, coaches learners in executive decision making, negotiation diplomacy, and telemetry.
+              </p>
+              <div class="flex-wrap" style="justify-content: center; gap: var(--space-1); margin-block-end: var(--space-4);">
+                <span class="badge badge--sm">Strategy</span>
+                <span class="badge badge--sm">Negotiation</span>
+                <span class="badge badge--sm">Analytics</span>
+              </div>
+              <a href="courses.html" class="btn btn--outline btn--sm" style="margin-block-start: auto;">View Taught Courses</a>
+            </div>
+          </article>
+
+          <!-- Dr. Mona Saleh -->
+          <article class="faculty-card card card--bordered" data-reveal data-reveal-delay="2">
+            <div class="card__body flex-col" style="align-items: center; text-align: center;">
+              <img src="assets/images/faculty-mona.svg" alt="Dr. Mona Saleh" class="faculty-card__avatar" width="100" height="100" style="border-radius: var(--radius-full); margin-block-end: var(--space-4);">
+              <h2 style="font-size: var(--font-xl); margin-block-end: var(--space-1);">Dr. Mona Saleh</h2>
+              <p style="font-size: var(--font-sm); color: var(--color-primary); font-weight: var(--weight-medium); margin-block-end: var(--space-2);">Senior Fellow, Cognitive Pedagogy</p>
+              <p style="font-size: var(--font-xs); color: var(--color-text-muted); margin-block-end: var(--space-4);">Humanities & Languages</p>
+              <p style="font-size: var(--font-sm); color: var(--color-text-secondary); margin-block-end: var(--space-4); line-height: var(--leading-relaxed);">
+                Explores cognitive load optimization and student meta-cognition to continually refine curriculum architecture across cohorts.
+              </p>
+              <div class="flex-wrap" style="justify-content: center; gap: var(--space-1); margin-block-end: var(--space-4);">
+                <span class="badge badge--sm">Cognition</span>
+                <span class="badge badge--sm">Pedagogy</span>
+                <span class="badge badge--sm">Curriculum</span>
+              </div>
+              <a href="courses.html" class="btn btn--outline btn--sm" style="margin-block-start: auto;">View Taught Courses</a>
+            </div>
+          </article>
+
+          <!-- Kareem Zeid -->
+          <article class="faculty-card card card--bordered" data-reveal data-reveal-delay="3">
+            <div class="card__body flex-col" style="align-items: center; text-align: center;">
+              <img src="assets/images/faculty-kareem.svg" alt="Kareem Zeid" class="faculty-card__avatar" width="100" height="100" style="border-radius: var(--radius-full); margin-block-end: var(--space-4);">
+              <h2 style="font-size: var(--font-xl); margin-block-end: var(--space-1);">Kareem Zeid</h2>
+              <p style="font-size: var(--font-sm); color: var(--color-primary); font-weight: var(--weight-medium); margin-block-end: var(--space-2);">Instructor in Robotics Systems</p>
+              <p style="font-size: var(--font-xs); color: var(--color-text-muted); margin-block-end: var(--space-4);">Computer Science & Engineering</p>
+              <p style="font-size: var(--font-sm); color: var(--color-text-secondary); margin-block-end: var(--space-4); line-height: var(--leading-relaxed);">
+                Mentors hardware prototyping, micro-controller interfaces, and embedded C/C++ development for competitive robotics teams.
+              </p>
+              <div class="flex-wrap" style="justify-content: center; gap: var(--space-1); margin-block-end: var(--space-4);">
+                <span class="badge badge--sm">Embedded</span>
+                <span class="badge badge--sm">Robotics</span>
+                <span class="badge badge--sm">Sensors</span>
+              </div>
+              <a href="courses.html" class="btn btn--outline btn--sm" style="margin-block-start: auto;">View Taught Courses</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__bottom flex-between">
+        <p style="font-size: var(--font-sm); color: var(--color-footer-text);">&copy; <span data-year>2026</span> Next Gen Academy.</p>
+        <div class="flex gap-4">
+          <a href="faculty.html" class="footer__nav-link" style="font-size: var(--font-xs);" data-i18n="nav.faculty">Faculty</a>
+          <a href="courses.html" class="footer__nav-link" style="font-size: var(--font-xs);" data-i18n="nav.courses">Courses</a>
+          <a href="contact.html" class="footer__nav-link" style="font-size: var(--font-xs);" data-i18n="nav.contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top" aria-label="Back to top">↑</button>
+</body>
+</html>

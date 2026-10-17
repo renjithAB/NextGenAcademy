@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light" data-title-key="about.title">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Next Gen Academy — Mission, Values & Educational Vision</title>
+  <meta name="description" content="Discover the foundational ethos, pedagogical commitments, and academic standards driving Next Gen Academy.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <script src="js/theme.js"></script>
+  <script src="js/utilities.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/navigation.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/forms.js" defer></script>
+  <script src="js/courses.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body class="page-wrapper">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container flex-between">
+      <a href="index.html" class="nav__logo" aria-label="Next Gen Academy Home">
+        <span class="nav__logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+            <rect width="32" height="32" rx="8" fill="currentColor"/>
+            <path d="M9 23V9l7 9 7-9v14" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="nav__logo-text">Next Gen <span>Academy</span></span>
+      </a>
+
+      <nav class="nav__menu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav__link" data-i18n="nav.home">Home</a>
+        <a href="about.html" class="nav__link active" data-i18n="nav.about">About</a>
+        <a href="courses.html" class="nav__link" data-i18n="nav.courses">Courses</a>
+        <a href="admissions.html" class="nav__link" data-i18n="nav.admissions">Admissions</a>
+        <a href="faculty.html" class="nav__link" data-i18n="nav.faculty">Faculty</a>
+        <a href="student-life.html" class="nav__link" data-i18n="nav.studentLife">Student Life</a>
+        <a href="resources.html" class="nav__link" data-i18n="nav.resources">Resources</a>
+        <a href="events.html" class="nav__link" data-i18n="nav.events">Events</a>
+        <a href="faq.html" class="nav__link" data-i18n="nav.faq">FAQ</a>
+        <a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="nav__desktop-actions flex" style="align-items: center; gap: var(--space-3);">
+        <div class="dropdown" data-lang-toggle>
+          <button type="button" class="btn btn--outline btn--sm" data-lang-toggle-btn aria-label="Toggle language">
+            🌐 <span data-lang-current>EN</span>
+          </button>
+        </div>
+        <div class="dropdown">
+          <button type="button" class="btn btn--outline btn--sm btn--icon" data-theme-cycle aria-label="Toggle visual theme">
+            <span class="theme-icon">☀️</span>
+          </button>
+        </div>
+        <a href="admissions.html" class="btn btn--primary btn--sm" data-i18n="nav.applyNow">Apply Now</a>
+      </div>
+
+      <button type="button" class="nav__hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="nav__mobile-overlay" hidden></div>
+  <div class="nav__mobile-menu" id="mobile-nav" hidden aria-hidden="true">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-block-end: var(--space-6);">
+      <span class="nav__logo-text">Next Gen <span>Academy</span></span>
+      <button type="button" class="btn btn--ghost btn--icon" onclick="Navigation.closeMobileMenu()" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="flex-col gap-4" style="margin-block-end: var(--space-8);">
+      <a href="index.html" class="nav__link" data-i18n="nav.home">Home</a>
+      <a href="about.html" class="nav__link active" data-i18n="nav.about">About</a>
+      <a href="courses.html" class="nav__link" data-i18n="nav.courses">Courses</a>
+      <a href="admissions.html" class="nav__link" data-i18n="nav.admissions">Admissions</a>
+      <a href="faculty.html" class="nav__link" data-i18n="nav.faculty">Faculty</a>
+      <a href="student-life.html" class="nav__link" data-i18n="nav.studentLife">Student Life</a>
+      <a href="resources.html" class="nav__link" data-i18n="nav.resources">Resources</a>
+      <a href="events.html" class="nav__link" data-i18n="nav.events">Events</a>
+      <a href="faq.html" class="nav__link" data-i18n="nav.faq">FAQ</a>
+      <a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a>
+    </nav>
+  </div>
+
+  <main class="page-main" id="main-content">
+    <header class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <div class="breadcrumb__item">
+            <a href="index.html" class="breadcrumb__link" data-i18n="nav.home">Home</a>
+            <span class="breadcrumb__separator">/</span>
+          </div>
+          <div class="breadcrumb__item">
+            <span class="breadcrumb__current" aria-current="page" data-i18n="nav.about">About Us</span>
+          </div>
+        </nav>
+        <span class="page-hero__label" data-i18n="about.title">Institutional Profile</span>
+        <h1 class="page-hero__title" data-i18n="about.title">About Next Gen Academy</h1>
+        <p class="page-hero__description" data-i18n="about.description">
+          An educational institution dedicated to intellectual curiosity, technical mastery, and inclusive humanistic values.
+        </p>
+      </div>
+    </header>
+
+    <!-- Mission & Vision Section -->
+    <section class="section">
+      <div class="container">
+        <div class="layout-split">
+          <div class="card card--bordered" style="padding: var(--space-8);" data-reveal>
+            <span class="section-label" data-i18n="about.mission.title">Our Mission</span>
+            <h2 style="font-size: var(--font-3xl); margin-block-end: var(--space-4);" data-i18n="about.mission.title">Our Mission</h2>
+            <p style="font-size: var(--font-lg); line-height: var(--leading-relaxed); color: var(--color-text-secondary);" data-i18n="about.mission.text">
+              To cultivate disciplined, curious, and empathetic thinkers by bridging foundational humanistic inquiry with cutting-edge technological and scientific curricula.
+            </p>
+          </div>
+
+          <div class="card card--bordered" style="padding: var(--space-8);" data-reveal data-reveal-delay="2">
+            <span class="section-label" data-i18n="about.vision.title">Our Vision</span>
+            <h2 style="font-size: var(--font-3xl); margin-block-end: var(--space-4);" data-i18n="about.vision.title">Our Vision</h2>
+            <p style="font-size: var(--font-lg); line-height: var(--leading-relaxed); color: var(--color-text-secondary);" data-i18n="about.vision.text">
+              To be a premier global educational community celebrated for academic rigor, universal accessibility, and empowering the next generation of principled innovators.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="section section--alt">
+      <div class="container">
+        <header class="section-header" data-reveal>
+          <span class="section-label">Institutional Ethos</span>
+          <h2 class="section-title" data-i18n="about.values.title">Our Core Values</h2>
+          <p class="section-description">Guiding every curriculum decision, mentorship session, and community initiative.</p>
+        </header>
+
+        <div class="values-grid">
+          <div class="value-card" data-reveal data-reveal-delay="1">
+            <span class="value-card__number">01</span>
+            <h3 class="value-card__title" data-i18n="about.value1.title">Academic Integrity</h3>
+            <p class="value-card__description" data-i18n="about.value1.desc">
+              Uncompromising dedication to peer-reviewed methodology, truthful discourse, and rigorous assessment ethics.
+            </p>
+          </div>
+
+          <div class="value-card" data-reveal data-reveal-delay="2">
+            <span class="value-card__number">02</span>
+            <h3 class="value-card__title" data-i18n="about.value2.title">Practical Mastery</h3>
+            <p class="value-card__description" data-i18n="about.value2.desc">
+              Moving beyond rote memorization into active laboratory inquiry, software engineering, and real-world implementation.
+            </p>
+          </div>
+
+          <div class="value-card" data-reveal data-reveal-delay="3">
+            <span class="value-card__number">03</span>
+            <h3 class="value-card__title" data-i18n="about.value3.title">Universal Equity</h3>
+            <p class="value-card__description" data-i18n="about.value3.desc">
+              Creating barrier-free educational environments that strictly respect WCAG accessibility standards and universal design.
+            </p>
+          </div>
+
+          <div class="value-card" data-reveal data-reveal-delay="4">
+            <span class="value-card__number">04</span>
+            <h3 class="value-card__title" data-i18n="about.value4.title">Global Perspective</h3>
+            <p class="value-card__description" data-i18n="about.value4.desc">
+              Fostering dual-language scholarship in English and Arabic to bridge cultures, borders, and academic traditions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Educational Commitments & CTA -->
+    <section class="section">
+      <div class="container container--narrow" data-reveal>
+        <div class="prose" style="margin-block-end: var(--space-12);">
+          <h2>Our Pedagogical Commitments</h2>
+          <p>
+            At Next Gen Academy, we reject superficial learning models. Our curriculum is engineered using cognitive load theory and structured scaffolding:
+          </p>
+          <ul>
+            <li><strong>Low Student-to-Mentor Ratios:</strong> Weekly office hours and personalized capstone project critiques.</li>
+            <li><strong>Production-Grade Toolchains:</strong> Students train on standard industry compilers, linters, laboratory apparatus, and design software.</li>
+            <li><strong>Open Institutional Transparency:</strong> We never invent affiliations or false student metrics. All course syllabi and learning outcomes are published transparently for student review.</li>
+          </ul>
+        </div>
+
+        <div class="cta-banner" data-reveal>
+          <p class="cta-banner__title">Ready to Learn With Us?</p>
+          <p class="cta-banner__description">Explore our verified course tracks and connect with an academic advisor today.</p>
+          <div class="cta-banner__actions">
+            <a href="courses.html" class="btn btn--secondary btn--lg" data-i18n="nav.courses">View Courses</a>
+            <a href="contact.html" class="btn btn--outline btn--lg" style="color: #ffffff; border-color: rgba(255,255,255,0.4);" data-i18n="nav.contact">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__bottom flex-between">
+        <p style="font-size: var(--font-sm); color: var(--color-footer-text);">&copy; <span data-year>2026</span> Next Gen Academy.</p>
+        <div class="flex gap-4">
+          <a href="about.html" class="footer__nav-link" style="font-size: var(--font-xs);" data-i18n="nav.about">About</a>
+          <a href="privacy-policy.html" class="footer__nav-link" style="font-size: var(--font-xs);" data-i18n="footer.privacy">Privacy</a>
+          <a href="accessibility.html" class="footer__nav-link" style="font-size: var(--font-xs);" data-i18n="footer.accessibility">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top" aria-label="Back to top">↑</button>
+</body>
+</html>

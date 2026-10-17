@@ -1,0 +1,6 @@
+# Next Gen Academy — robots.txt
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://nextgenacademy.edu/sitemap.xml

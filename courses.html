@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light" data-title-key="courses.title">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Catalog — Next Gen Academy</title>
+  <meta name="description" content="Explore comprehensive courses across technology, applied mathematics, sciences, languages, and strategic leadership.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <script src="js/theme.js"></script>
+  <script src="js/utilities.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/navigation.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/forms.js" defer></script>
+  <script src="js/courses.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body class="page-wrapper">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container flex-between">
+      <a href="index.html" class="nav__logo" aria-label="Next Gen Academy Home">
+        <span class="nav__logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+            <rect width="32" height="32" rx="8" fill="currentColor"/>
+            <path d="M9 23V9l7 9 7-9v14" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="nav__logo-text">Next Gen <span>Academy</span></span>
+      </a>
+
+      <nav class="nav__menu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav__link" data-i18n="nav.home">Home</a>
+        <a href="about.html" class="nav__link" data-i18n="nav.about">About</a>
+        <a href="courses.html" class="nav__link active" data-i18n="nav.courses">Courses</a>
+        <a href="admissions.html" class="nav__link" data-i18n="nav.admissions">Admissions</a>
+        <a href="faculty.html" class="nav__link" data-i18n="nav.faculty">Faculty</a>
+        <a href="student-life.html" class="nav__link" data-i18n="nav.studentLife">Student Life</a>
+        <a href="resources.html" class="nav__link" data-i18n="nav.resources">Resources</a>
+        <a href="events.html" class="nav__link" data-i18n="nav.events">Events</a>
+        <a href="faq.html" class="nav__link" data-i18n="nav.faq">FAQ</a>
+        <a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="nav__desktop-actions flex" style="align-items: center; gap: var(--space-3);">
+        <div class="dropdown" data-lang-toggle>
+          <button type="button" class="btn btn--outline btn--sm" data-lang-toggle-btn aria-label="Toggle language">
+            🌐 <span data-lang-current>EN</span>
+          </button>
+        </div>
+        <div class="dropdown">
+          <button type="button" class="btn btn--outline btn--sm btn--icon" data-theme-cycle aria-label="Toggle visual theme">
+            <span class="theme-icon">☀️</span>
+          </button>
+        </div>
+        <a href="admissions.html" class="btn btn--primary btn--sm" data-i18n="nav.applyNow">Apply Now</a>
+      </div>
+
+      <button type="button" class="nav__hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="nav__mobile-overlay" hidden></div>
+  <div class="nav__mobile-menu" id="mobile-nav" hidden aria-hidden="true">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-block-end: var(--space-6);">
+      <span class="nav__logo-text">Next Gen <span>Academy</span></span>
+      <button type="button" class="btn btn--ghost btn--icon" onclick="Navigation.closeMobileMenu()" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="flex-col gap-4" style="margin-block-end: var(--space-8);">
+      <a href="index.html" class="nav__link" data-i18n="nav.home">Home</a>
+      <a href="about.html" class="nav__link" data-i18n="nav.about">About</a>
+      <a href="courses.html" class="nav__link active" data-i18n="nav.courses">Courses</a>
+      <a href="admissions.html" class="nav__link" data-i18n="nav.admissions">Admissions</a>
+      <a href="faculty.html" class="nav__link" data-i18n="nav.faculty">Faculty</a>
+      <a href="student-life.html" class="nav__link" data-i18n="nav.studentLife">Student Life</a>
+      <a href="resources.html" class="nav__link" data-i18n="nav.resources">Resources</a>
+      <a href="events.html" class="nav__link" data-i18n="nav.events">Events</a>
+      <a href="faq.html" class="nav__link" data-i18n="nav.faq">FAQ</a>
+      <a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="flex-col gap-4">
+      <div class="flex gap-2">
+        <button type="button" class="btn btn--outline btn--sm" data-lang-btn="en">English (EN)</button>
+        <button type="button" class="btn btn--outline btn--sm" data-lang-btn="ar">العربية (AR)</button>
+      </div>
+      <div class="flex gap-2">
+        <button type="button" class="btn btn--outline btn--sm" data-theme-btn="light">Light</button>
+        <button type="button" class="btn btn--outline btn--sm" data-theme-btn="dark">Dark</button>
+        <button type="button" class="btn btn--outline btn--sm" data-theme-btn="system">System</button>
+      </div>
+      <a href="admissions.html" class="btn btn--primary" style="text-align: center;" data-i18n="nav.applyNow">Apply Now</a>
+    </div>
+  </div>
+
+  <main class="page-main" id="main-content">
+    <!-- Page Hero Banner -->
+    <header class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <div class="breadcrumb__item">
+            <a href="index.html" class="breadcrumb__link" data-i18n="nav.home">Home</a>
+            <span class="breadcrumb__separator">/</span>
+          </div>
+          <div class="breadcrumb__item">
+            <span class="breadcrumb__current" aria-current="page" data-i18n="nav.courses">Courses</span>
+          </div>
+        </nav>
+        <span class="page-hero__label" data-i18n="courses.filter.all">Academic Offerings</span>
+        <h1 class="page-hero__title" data-i18n="courses.title">Explore Academic Programs</h1>
+        <p class="page-hero__description" data-i18n="courses.description">
+          Find your next intellectual milestone. Filter by topic, instructional level, and delivery format.
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Catalog Section -->
+    <section class="section">
+      <div class="container">
+        <div class="courses-layout">
+          <!-- Sidebar Filters -->
+          <aside class="courses-sidebar" aria-label="Course Filters">
+            <!-- Search -->
+            <div class="courses-sidebar__section">
+              <label for="courses-search-input" class="courses-sidebar__title" data-i18n="courses.search.label">Search Catalog</label>
+              <div class="search-wrapper">
+                <input
+                  type="search"
+                  id="courses-search-input"
+                  class="form-control"
+                  placeholder="Search by topic, skill..."
+                  data-courses-search
+                  data-i18n-placeholder="courses.search.placeholder"
+                  aria-label="Search courses"
+                >
+              </div>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="courses-sidebar__section">
+              <p class="courses-sidebar__title" data-i18n="courses.filter.category">Discipline</p>
+              <div class="flex-col gap-2">
+                <button type="button" class="btn btn--ghost btn--sm active" data-filter="category" data-value="" data-i18n="courses.filter.all" style="justify-content: flex-start;">All Disciplines</button>
+                <button type="button" class="btn btn--ghost btn--sm" data-filter="category" data-value="technology" data-i18n="courses.category.technology" style="justify-content: flex-start;">Technology & CS</button>
+                <button type="button" class="btn btn--ghost btn--sm" data-filter="category" data-value="mathematics" data-i18n="courses.category.mathematics" style="justify-content: flex-start;">Mathematics</button>
+                <button type="button" class="btn btn--ghost btn--sm" data-filter="category" data-value="sciences" data-i18n="courses.category.sciences" style="justify-content: flex-start;">Natural Sciences</button>
+                <button type="button" class="btn btn--ghost btn--sm" data-filter="category" data-value="languages" data-i18n="courses.category.languages" style="justify-content: flex-start;">Languages & Rhetoric</button>
+                <button type="button" class="btn btn--ghost btn--sm" data-filter="category" data-value="arts" data-i18n="courses.category.arts" style="justify-content: flex-start;">Arts & Design</button>
+                <button type="button" class="btn btn--ghost btn--sm" data-filter="category" data-value="business" data-i18n="courses.category.business" style="justify-content: flex-start;">Business & Strategy</button>
+              </div>
+            </div>
+
+            <!-- Level Filter -->
+            <div class="courses-sidebar__section">
+              <p class="courses-sidebar__title" data-i18n="courses.filter.level">Instructional Level</p>
+              <div class="flex-col gap-2">
+                <button type="button" class="btn btn--ghost btn--sm active" data-filter="level" data-value="" data-i18n="courses.filter.all" style="justify-content: flex-start;">All Levels</button>
+                <button type="button" class="btn btn--ghost btn--sm" data-filter="level" data-value="beginner" data-i18n="courses.level.beginner" style="justify-content: flex-start;">Foundational / Beginner</button>
+                <button type="button" class="btn btn--ghost btn--sm" data-filter="level" data-value="intermediate" data-i18n="courses.level.intermediate" style="justify-content: flex-start;">Intermediate</button>
+                <button type="button" class="btn btn--ghost btn--sm" data-filter="level" data-value="advanced" data-i18n="courses.level.advanced" style="justify-content: flex-start;">Advanced Mastery</button>
+              </div>
+            </div>
+
+            <!-- Format Filter -->
+            <div class="courses-sidebar__section">
+              <p class="courses-sidebar__title" data-i18n="courses.filter.format">Delivery Format</p>
+              <div class="flex-col gap-2">
+                <button type="button" class="btn btn--ghost btn--sm active" data-filter="format" data-value="" data-i18n="courses.filter.all" style="justify-content: flex-start;">All Formats</button>
+                <button type="button" class="btn btn--ghost btn--sm" data-filter="format" data-value="online" data-i18n="courses.format.online" style="justify-content: flex-start;">100% Online</button>
+                <button type="button" class="btn btn--ghost btn--sm" data-filter="format" data-value="hybrid" data-i18n="courses.format.hybrid" style="justify-content: flex-start;">Hybrid Delivery</button>
+                <button type="button" class="btn btn--ghost btn--sm" data-filter="format" data-value="in-person" data-i18n="courses.format.inPerson" style="justify-content: flex-start;">In-Person Laboratory</button>
+              </div>
+            </div>
+
+            <!-- Reset Button -->
+            <button type="button" class="btn btn--outline btn--sm" data-courses-clear data-i18n="courses.results.clear" style="width: 100%; margin-block-start: var(--space-4);">
+              Clear All Filters
+            </button>
+          </aside>
+
+          <!-- Main Course Results Area -->
+          <div class="courses-content">
+            <!-- Header with Results Count & Sort -->
+            <div class="courses-results-header">
+              <div class="courses-results-count" data-courses-count aria-live="polite">
+                Showing all courses
+              </div>
+
+              <div class="flex gap-2" style="align-items: center;">
+                <label for="courses-sort-select" style="font-size: var(--font-sm); color: var(--color-text-muted);" data-i18n="courses.sort.label">Sort by:</label>
+                <select id="courses-sort-select" class="form-control" data-courses-sort style="width: auto; padding: var(--space-1) var(--space-3); font-size: var(--font-sm);">
+                  <option value="newest" data-i18n="courses.sort.newest">Default Order</option>
+                  <option value="az" data-i18n="courses.sort.az">Title (A-Z)</option>
+                  <option value="popular" data-i18n="courses.sort.popular">Most Popular</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Live Courses Grid (Injected by js/courses.js) -->
+            <div class="courses-grid" data-courses-grid>
+              <!-- Skeletons render during load -->
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" data-courses-empty hidden style="margin-block: var(--space-16); text-align: center;">
+              <p class="empty-state__icon" aria-hidden="true" style="font-size: 3rem; margin-block-end: var(--space-4);">🔍</p>
+              <h3 class="empty-state__title" data-i18n="courses.results.none">No Matching Programs Found</h3>
+              <p class="empty-state__description" style="color: var(--color-text-muted); margin-block-end: var(--space-6);">
+                Try broadening your search term or clearing active category filters.
+              </p>
+              <button type="button" class="btn btn--primary" data-courses-clear data-i18n="courses.results.clear">Reset Filters</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__logo" style="color: #ffffff; margin-block-end: var(--space-4); display: inline-flex;">
+            <span class="nav__logo-text">Next Gen <span>Academy</span></span>
+          </a>
+          <p class="footer__description" data-i18n="footer.brand.description">
+            Next Gen Academy provides verified curricula designed to prepare scholars for intellectual and professional distinction.
+          </p>
+        </div>
+        <div class="footer__nav-group">
+          <p class="footer__nav-title" data-i18n="footer.quickLinks">Quick Links</p>
+          <ul style="list-style: none; padding: 0;">
+            <li><a href="about.html" class="footer__nav-link" data-i18n="nav.about">About Us</a></li>
+            <li><a href="courses.html" class="footer__nav-link" data-i18n="nav.courses">Course Catalog</a></li>
+            <li><a href="admissions.html" class="footer__nav-link" data-i18n="nav.admissions">Admissions</a></li>
+            <li><a href="faculty.html" class="footer__nav-link" data-i18n="nav.faculty">Faculty</a></li>
+          </ul>
+        </div>
+        <div class="footer__nav-group">
+          <p class="footer__nav-title" data-i18n="footer.legal">Support & Policies</p>
+          <ul style="list-style: none; padding: 0;">
+            <li><a href="faq.html" class="footer__nav-link" data-i18n="nav.faq">Frequently Asked Questions</a></li>
+            <li><a href="privacy-policy.html" class="footer__nav-link" data-i18n="footer.privacy">Privacy Policy</a></li>
+            <li><a href="accessibility.html" class="footer__nav-link" data-i18n="footer.accessibility">Accessibility Statement</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom flex-between">
+        <p style="font-size: var(--font-sm); color: var(--color-footer-text);">&copy; <span data-year>2026</span> Next Gen Academy.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top" aria-label="Back to top">↑</button>
+</body>
+</html>
