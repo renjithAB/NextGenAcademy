@@ -1,451 +1,992 @@
 <!DOCTYPE html>
+
 <html lang="en" dir="ltr" data-theme="light" data-title-key="hero.headline">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Next Gen Academy — Empowering Future Thinkers & Innovators</title>
+
   <meta name="description" content="Next Gen Academy provides world-class educational pathways in technology, mathematics, sciences, languages, and leadership.">
+
   <meta name="theme-color" content="#ffffff">
+
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
+
+
   <!-- Open Graph / Meta -->
+
   <meta property="og:type" content="website">
+
   <meta property="og:title" content="Next Gen Academy — Excellence in Modern Education">
+
   <meta property="og:description" content="Discover rigorous curriculum, dedicated mentorship, and future-ready academic programs.">
+
   <meta property="og:image" content="assets/images/course-web-dev.svg">
+
   <meta property="og:url" content="https://nextgenacademy.edu/">
 
+
+
   <!-- Stylesheets -->
+
   <link rel="stylesheet" href="css/tokens.css">
+
   <link rel="stylesheet" href="css/base.css">
+
   <link rel="stylesheet" href="css/layout.css">
+
   <link rel="stylesheet" href="css/components.css">
+
   <link rel="stylesheet" href="css/pages.css">
+
   <link rel="stylesheet" href="css/responsive.css">
+
   <link rel="stylesheet" href="css/animations.css">
 
+
+
   <!-- Early Theme Init Script (Zero FOUC) -->
+
   <script src="js/theme.js"></script>
 
+
+
   <!-- Application Scripts -->
+
+  <script src="js/shared-layout.js" defer></script>
+
   <script src="js/utilities.js" defer></script>
+
   <script src="js/i18n.js" defer></script>
+
   <script src="js/navigation.js" defer></script>
+
   <script src="js/animations.js" defer></script>
+
   <script src="js/forms.js" defer></script>
+
   <script src="js/courses.js" defer></script>
+
   <script src="js/main.js" defer></script>
+
 </head>
+
 <body class="page-wrapper">
+
   <!-- Skip Navigation -->
+
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
+
+
   <!-- Announcement Bar -->
+
   <aside class="announcement-bar" aria-label="Announcement">
+
     <div class="announcement-bar__inner">
+
       <span data-i18n="announcement.text">Applications for Spring Cohorts are officially open.</span>
+
       <a href="admissions.html" class="announcement-bar__link" data-i18n="announcement.learnMore">Learn More &rarr;</a>
+
     </div>
+
     <button type="button" class="announcement-bar__close" aria-label="Dismiss announcement" data-i18n-aria="announcement.dismiss">&times;</button>
+
   </aside>
 
+
+
   <!-- Site Header -->
+
   <header class="site-header">
-    <div class="container flex-between">
+
+    <div class="container container--header flex-between">
+
       <!-- Logo -->
+
       <a href="index.html" class="nav__logo" aria-label="Next Gen Academy Home">
+
         <span class="nav__logo-mark" aria-hidden="true">
+
           <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+
             <rect width="32" height="32" rx="8" fill="currentColor"/>
+
             <path d="M9 23V9l7 9 7-9v14" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
           </svg>
+
         </span>
+
         <span class="nav__logo-text">Next Gen <span>Academy</span></span>
+
       </a>
 
+
+
       <!-- Desktop Navigation Menu -->
+
       <nav class="nav__menu" aria-label="Primary Navigation">
+
         <a href="index.html" class="nav__link active" data-i18n="nav.home">Home</a>
+
         <a href="about.html" class="nav__link" data-i18n="nav.about">About</a>
+
         <a href="courses.html" class="nav__link" data-i18n="nav.courses">Courses</a>
+
         <a href="admissions.html" class="nav__link" data-i18n="nav.admissions">Admissions</a>
+
         <a href="faculty.html" class="nav__link" data-i18n="nav.faculty">Faculty</a>
+
         <a href="student-life.html" class="nav__link" data-i18n="nav.studentLife">Student Life</a>
+
         <a href="resources.html" class="nav__link" data-i18n="nav.resources">Resources</a>
+
         <a href="events.html" class="nav__link" data-i18n="nav.events">Events</a>
+
         <a href="faq.html" class="nav__link" data-i18n="nav.faq">FAQ</a>
+
         <a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a>
+
       </nav>
 
+
+
       <!-- Action Controls (Language, Theme, CTA) -->
-      <div class="nav__desktop-actions flex" style="align-items: center; gap: var(--space-3);">
+
+      <div class="nav__desktop-actions" data-lang-toggle>
+
         <!-- Language Switcher -->
-        <div class="dropdown" data-lang-toggle>
-          <button type="button" class="btn btn--outline btn--sm" data-lang-toggle-btn aria-label="Toggle language">
-            🌐 <span data-lang-current>EN</span>
-          </button>
-        </div>
+
+        <button type="button" class="lang-toggle-btn" data-lang-toggle-btn aria-label="Toggle language (English / العربية)">
+
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+
+            <circle cx="12" cy="12" r="10"></circle>
+
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+
+          </svg>
+
+          <span data-lang-current>EN</span>
+
+        </button>
+
+
 
         <!-- Theme Selector -->
-        <div class="dropdown">
-          <button type="button" class="btn btn--outline btn--sm btn--icon" data-theme-cycle aria-label="Toggle visual theme">
-            <span class="theme-icon">☀️</span>
-          </button>
-        </div>
+
+        <button type="button" class="theme-toggle-btn" data-theme-cycle aria-label="Toggle visual theme">
+
+          <span class="theme-icon" aria-hidden="true">
+
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+
+          </span>
+
+        </button>
+
+
 
         <!-- Apply CTA -->
-        <a href="admissions.html" class="btn btn--primary btn--sm" data-i18n="nav.applyNow">Apply Now</a>
+
+        <a href="admissions.html" class="btn btn--primary nav-cta-btn" data-i18n="nav.applyNow">Apply Now</a>
+
       </div>
+
+
 
       <!-- Mobile Hamburger -->
+
       <button type="button" class="nav__hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+
         <span></span>
+
         <span></span>
+
         <span></span>
+
       </button>
+
     </div>
+
   </header>
 
+
+
   <!-- Mobile Drawer Menu -->
+
   <div class="nav__mobile-overlay" hidden></div>
+
   <div class="nav__mobile-menu" id="mobile-nav" hidden aria-hidden="true">
+
     <div style="display: flex; justify-content: space-between; align-items: center; margin-block-end: var(--space-6);">
+
       <span class="nav__logo-text">Next Gen <span>Academy</span></span>
+
       <button type="button" class="btn btn--ghost btn--icon" onclick="Navigation.closeMobileMenu()" aria-label="Close menu">&times;</button>
+
     </div>
+
+
 
     <nav class="flex-col gap-4" style="margin-block-end: var(--space-8);">
+
       <a href="index.html" class="nav__link active" data-i18n="nav.home">Home</a>
+
       <a href="about.html" class="nav__link" data-i18n="nav.about">About</a>
+
       <a href="courses.html" class="nav__link" data-i18n="nav.courses">Courses</a>
+
       <a href="admissions.html" class="nav__link" data-i18n="nav.admissions">Admissions</a>
+
       <a href="faculty.html" class="nav__link" data-i18n="nav.faculty">Faculty</a>
+
       <a href="student-life.html" class="nav__link" data-i18n="nav.studentLife">Student Life</a>
+
       <a href="resources.html" class="nav__link" data-i18n="nav.resources">Resources</a>
+
       <a href="events.html" class="nav__link" data-i18n="nav.events">Events</a>
+
       <a href="faq.html" class="nav__link" data-i18n="nav.faq">FAQ</a>
+
       <a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a>
+
     </nav>
 
+
+
     <div class="flex-col gap-4">
+
       <div class="flex gap-2">
+
         <button type="button" class="btn btn--outline btn--sm" data-lang-btn="en">English (EN)</button>
+
         <button type="button" class="btn btn--outline btn--sm" data-lang-btn="ar">العربية (AR)</button>
+
       </div>
+
       <div class="flex gap-2">
+
         <button type="button" class="btn btn--outline btn--sm" data-theme-btn="light">Light</button>
+
         <button type="button" class="btn btn--outline btn--sm" data-theme-btn="dark">Dark</button>
+
         <button type="button" class="btn btn--outline btn--sm" data-theme-btn="system">System</button>
+
       </div>
+
       <a href="admissions.html" class="btn btn--primary" style="text-align: center;" data-i18n="nav.applyNow">Apply Now</a>
+
     </div>
+
   </div>
 
+
+
   <!-- Main Content Container -->
+
   <main class="page-main" id="main-content">
+
     <!-- Hero Section -->
+
     <section class="hero" aria-labelledby="hero-heading">
+
       <div class="hero__bg" aria-hidden="true">
+
         <div class="hero__bg-pattern"></div>
+
       </div>
+
+
 
       <div class="container hero__content">
+
         <div class="hero__inner">
+
           <div class="hero__text">
+
             <div class="hero__label">
+
               <span class="hero__label-dot"></span>
+
               <span data-i18n="hero.label">Forward-Thinking Academic Excellence</span>
+
             </div>
+
+
 
             <h1 id="hero-heading" class="hero__headline">
+
               <span data-i18n="hero.headline">Shaping Tomorrow's</span>
+
               <span class="hero__headline-accent" data-i18n="hero.headlineAccent">Minds & Leaders</span>
+
             </h1>
 
+
+
             <p class="hero__subheadline" data-i18n="hero.subheadline">
+
               Next Gen Academy delivers rigorous, mentor-driven education combining STEM mastery, humanities, and critical inquiry to empower students for a changing world.
+
             </p>
+
+
 
             <div class="hero__actions">
-              <a href="courses.html" class="btn btn--primary btn--lg" data-i18n="hero.primaryCta">Explore Programs</a>
-              <a href="admissions.html" class="btn btn--outline btn--lg" style="color: #ffffff; border-color: rgba(255,255,255,0.4);" data-i18n="hero.secondaryCta">Admissions Process</a>
+
+              <a href="about.html" class="btn btn--primary btn--lg" data-i18n="hero.primaryCta">Explore Programs</a>
+
+              <a href="admissions.html" class="btn btn--outline-light btn--lg" data-i18n="hero.secondaryCta">Admissions Process</a>
+
             </div>
+
+
 
             <div class="hero__stats">
+
               <div class="hero__stat">
+
                 <span class="hero__stat-value" data-count="12">12</span>
+
                 <span class="hero__stat-label" data-i18n="hero.stat1Label">Core Academic Tracks</span>
+
               </div>
+
               <div class="hero__stat">
+
                 <span class="hero__stat-value" data-count="100" data-suffix="%">100%</span>
+
                 <span class="hero__stat-label" data-i18n="hero.stat2Label">Faculty-Led Mentorship</span>
+
               </div>
+
               <div class="hero__stat">
+
                 <span class="hero__stat-value">Bilingual</span>
+
                 <span class="hero__stat-label" data-i18n="hero.stat3Label">English & Arabic Curriculum</span>
+
               </div>
+
             </div>
+
           </div>
+
+
 
           <div class="hero__visual" aria-hidden="true">
+
             <div class="hero__visual-card">
-              <div class="hero__visual-badge">✦ Academic Distinction</div>
-              <p class="hero__visual-title">Next Generation Educational Framework</p>
-              <p class="hero__visual-subtitle">Structured for deep comprehension and practical application.</p>
-              <div class="hero__visual-features">
-                <div class="hero__visual-feature">
-                  <span class="hero__visual-feature-icon">✓</span>
-                  <span>Accessible, Universal Design for Learning (UDL)</span>
-                </div>
-                <div class="hero__visual-feature">
-                  <span class="hero__visual-feature-icon">✓</span>
-                  <span>Direct Laboratory & Hands-on Inquiry</span>
-                </div>
-                <div class="hero__visual-feature">
-                  <span class="hero__visual-feature-icon">✓</span>
-                  <span>Interdisciplinary STEM & Humanities</span>
-                </div>
-                <div class="hero__visual-feature">
-                  <span class="hero__visual-feature-icon">✓</span>
-                  <span>Full WCAG 2.2 AA Verified Accessibility</span>
-                </div>
+
+              <div class="hero__visual-badge">
+
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+
+                <span>Academic Distinction</span>
+
               </div>
+
+              <p class="hero__visual-title">Next Generation Educational Framework</p>
+
+              <p class="hero__visual-subtitle">Structured for deep comprehension and practical application.</p>
+
+              <div class="hero__visual-features">
+
+                <div class="hero__visual-feature">
+
+                  <span class="hero__visual-feature-icon">
+
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+
+                  </span>
+
+                  <span>Accessible, Universal Design for Learning (UDL)</span>
+
+                </div>
+
+                <div class="hero__visual-feature">
+
+                  <span class="hero__visual-feature-icon">
+
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+
+                  </span>
+
+                  <span>Direct Laboratory & Hands-on Inquiry</span>
+
+                </div>
+
+                <div class="hero__visual-feature">
+
+                  <span class="hero__visual-feature-icon">
+
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+
+                  </span>
+
+                  <span>Interdisciplinary STEM & Humanities</span>
+
+                </div>
+
+                <div class="hero__visual-feature">
+
+                  <span class="hero__visual-feature-icon">
+
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+
+                  </span>
+
+                  <span>Full WCAG 2.2 AA Verified Accessibility</span>
+
+                </div>
+
+              </div>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
+
 
     <!-- Why Next Gen Academy (Institutional Value Proposition) -->
+
     <section class="section section--alt" aria-labelledby="why-heading">
+
       <div class="container">
+
         <header class="section-header" data-reveal>
+
           <span class="section-label" data-i18n="home.whyUs.label">Our Institutional Promise</span>
+
           <h2 id="why-heading" class="section-title" data-i18n="home.whyUs.title">Why Choose Next Gen Academy</h2>
+
           <p class="section-description" data-i18n="home.whyUs.description">
+
             We unite academic rigor, modern cognitive pedagogy, and inclusive technology to create an environment where every scholar thrives.
+
           </p>
+
         </header>
 
-        <div class="features-grid">
+
+
+                <div class="features-grid">
+
           <article class="feature-card" data-reveal data-reveal-delay="1">
-            <div class="feature-card__icon" aria-hidden="true">🏛️</div>
+
+            <div class="feature-card__icon" aria-hidden="true">
+
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+
+              </svg>
+
+            </div>
+
             <h3 class="feature-card__title" data-i18n="home.whyUs.reason1.title">Academic Credibility</h3>
+
             <p class="feature-card__description" data-i18n="home.whyUs.reason1.desc">
+
               Curriculums developed by research-active educators and seasoned practitioners adhering to international standards.
+
             </p>
+
           </article>
+
+
 
           <article class="feature-card" data-reveal data-reveal-delay="2">
-            <div class="feature-card__icon" aria-hidden="true">💡</div>
+
+            <div class="feature-card__icon" aria-hidden="true">
+
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                <line x1="9" y1="18" x2="15" y2="18"/>
+
+                <line x1="10" y1="22" x2="14" y2="22"/>
+
+                <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
+
+              </svg>
+
+            </div>
+
             <h3 class="feature-card__title" data-i18n="home.whyUs.reason2.title">Active Learning Labs</h3>
+
             <p class="feature-card__description" data-i18n="home.whyUs.reason2.desc">
+
               Theory is immediately validated through hands-on code laboratories, mathematical problem sets, and studio critiques.
+
             </p>
+
           </article>
+
+
 
           <article class="feature-card" data-reveal data-reveal-delay="3">
-            <div class="feature-card__icon" aria-hidden="true">🌐</div>
+
+            <div class="feature-card__icon" aria-hidden="true">
+
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                <circle cx="12" cy="12" r="10"/>
+
+                <line x1="2" y1="12" x2="22" y2="12"/>
+
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+
+              </svg>
+
+            </div>
+
             <h3 class="feature-card__title" data-i18n="home.whyUs.reason3.title">Bilingual Scholarship</h3>
+
             <p class="feature-card__description" data-i18n="home.whyUs.reason3.desc">
+
               Complete dual-language fluency across English and Arabic, empowering scholars to publish and collaborate internationally.
+
             </p>
+
           </article>
+
+
 
           <article class="feature-card" data-reveal data-reveal-delay="4">
-            <div class="feature-card__icon" aria-hidden="true">🤝</div>
+
+            <div class="feature-card__icon" aria-hidden="true">
+
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+
+                <circle cx="9" cy="7" r="4"/>
+
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+
+              </svg>
+
+            </div>
+
             <h3 class="feature-card__title" data-i18n="home.whyUs.reason4.title">Dedicated Mentorship</h3>
+
             <p class="feature-card__description" data-i18n="home.whyUs.reason4.desc">
+
               Personalized guidance with faculty office hours, peer research circles, and structured career trajectory advising.
+
             </p>
+
           </article>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- Featured Courses Section -->
-    <section class="section" aria-labelledby="featured-courses-heading">
+
+
+        <!-- Academic Pathways Section -->
+    <section class="section" aria-labelledby="academic-pathways-heading">
       <div class="container">
         <header class="section-header" data-reveal>
-          <span class="section-label" data-i18n="home.featuredCourses.label">Flagship Programs</span>
-          <h2 id="featured-courses-heading" class="section-title" data-i18n="home.featuredCourses.title">Featured Courses</h2>
-          <p class="section-description" data-i18n="home.featuredCourses.description">
-            Explore our most popular cohorts spanning technology, sciences, literature, and analytical problem-solving.
+          <span class="section-label">Curriculum Focus</span>
+          <h2 id="academic-pathways-heading" class="section-title">Academic Pathways & Disciplines</h2>
+          <p class="section-description">
+            Rigorous cohorts spanning technology, sciences, literature, and analytical problem-solving.
           </p>
         </header>
 
-        <!-- Dynamic Featured Courses Grid -->
-        <div class="courses-grid" data-featured-courses>
-          <!-- Loaded via js/courses.js or fallback -->
-        </div>
-
-        <div style="text-align: center; margin-block-start: var(--space-12);" data-reveal>
-          <a href="courses.html" class="btn btn--outline btn--lg" data-i18n="home.featuredCourses.viewAll">View Full Catalog &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Illustrative Testimonials Section -->
-    <section class="section section--alt" aria-labelledby="testimonials-heading">
-      <div class="container">
-        <header class="section-header" data-reveal>
-          <span class="section-label" data-i18n="home.testimonials.label">Student Voices</span>
-          <h2 id="testimonials-heading" class="section-title" data-i18n="home.testimonials.title">What Our Scholars Say</h2>
-          <p class="section-description" style="font-size: var(--font-sm); color: var(--color-text-muted);" data-i18n="home.testimonials.notice">
-            [Sample illustrative experiences demonstrating student outcomes]
-          </p>
-        </header>
-
-        <div class="testimonials-grid">
+        <div class="grid grid-3">
           <div class="card card--bordered" data-reveal data-reveal-delay="1">
             <div class="card__body">
-              <p style="font-size: 1.1rem; font-style: italic; margin-block-end: var(--space-6);">
-                "The focus on accessibility and standards in the Web Development track transformed how I think about frontend architecture. I now build software that everyone can use."
-              </p>
-              <div class="flex" style="align-items: center; gap: var(--space-3);">
-                <div style="width: 44px; height: 44px; border-radius: var(--radius-full); background: var(--color-primary-subtle); display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--color-primary);">
-                  L.A.
-                </div>
-                <div>
-                  <strong style="display: block;">Layla Al-Amiri</strong>
-                  <span style="font-size: var(--font-sm); color: var(--color-text-muted);">Web Development Cohort</span>
-                </div>
-              </div>
+              <span class="badge badge--primary" style="margin-block-end: var(--space-3); display: inline-block;">Technology</span>
+              <h3 class="card__title">Software Engineering & Web Systems</h3>
+              <p class="card__description">Modern standards-compliant web development, frontend architecture, and systems engineering.</p>
+            </div>
+            <div class="card__footer">
+              <a href="about.html" class="btn btn--outline btn--sm">Track Overview &rarr;</a>
             </div>
           </div>
 
           <div class="card card--bordered" data-reveal data-reveal-delay="2">
             <div class="card__body">
-              <p style="font-size: 1.1rem; font-style: italic; margin-block-end: var(--space-6);">
-                "Prof. Rostova made multivariable calculus feel intuitive and deeply connected to physical engineering. The mentorship sessions were invaluable."
-              </p>
-              <div class="flex" style="align-items: center; gap: var(--space-3);">
-                <div style="width: 44px; height: 44px; border-radius: var(--radius-full); background: var(--color-primary-subtle); display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--color-primary);">
-                  Z.K.
-                </div>
-                <div>
-                  <strong style="display: block;">Zayd Kareem</strong>
-                  <span style="font-size: var(--font-sm); color: var(--color-text-muted);">Applied Mathematics Cohort</span>
-                </div>
-              </div>
+              <span class="badge badge--primary" style="margin-block-end: var(--space-3); display: inline-block;">Mathematics</span>
+              <h3 class="card__title">Applied Mathematics & Inquiry</h3>
+              <p class="card__description">Rigorous calculus, linear algebra, and computational problem-solving for future research.</p>
+            </div>
+            <div class="card__footer">
+              <a href="about.html" class="btn btn--outline btn--sm">Track Overview &rarr;</a>
             </div>
           </div>
 
           <div class="card card--bordered" data-reveal data-reveal-delay="3">
             <div class="card__body">
-              <p style="font-size: 1.1rem; font-style: italic; margin-block-end: var(--space-6);">
-                "The bilingual curriculum allowed me to write academic research with precision in both Arabic and English. That duality opened international publishing doors for me."
-              </p>
-              <div class="flex" style="align-items: center; gap: var(--space-3);">
-                <div style="width: 44px; height: 44px; border-radius: var(--radius-full); background: var(--color-primary-subtle); display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--color-primary);">
-                  F.M.
-                </div>
-                <div>
-                  <strong style="display: block;">Fatima Mansoori</strong>
-                  <span style="font-size: var(--font-sm); color: var(--color-text-muted);">Arabic & Academic Writing Cohort</span>
-                </div>
-              </div>
+              <span class="badge badge--primary" style="margin-block-end: var(--space-3); display: inline-block;">Humanities</span>
+              <h3 class="card__title">Bilingual Literature & Ethics</h3>
+              <p class="card__description">Dual-language academic inquiry, critical thinking, rhetoric, and international discourse.</p>
+            </div>
+            <div class="card__footer">
+              <a href="about.html" class="btn btn--outline btn--sm">Track Overview &rarr;</a>
             </div>
           </div>
         </div>
+
+        <div style="text-align: center; margin-block-start: var(--space-12);" data-reveal>
+          <a href="about.html" class="btn btn--outline btn--lg">Explore Full Academic Mission &rarr;</a>
+        </div>
       </div>
     </section>
+
+
+
+    <!-- Illustrative Testimonials Section -->
+
+    <section class="section section--alt" aria-labelledby="testimonials-heading">
+
+      <div class="container">
+
+        <header class="section-header" data-reveal>
+
+          <span class="section-label" data-i18n="home.testimonials.label">Student Voices</span>
+
+          <h2 id="testimonials-heading" class="section-title" data-i18n="home.testimonials.title">What Our Scholars Say</h2>
+
+          <p class="section-description" style="font-size: var(--font-sm); color: var(--color-text-muted);" data-i18n="home.testimonials.notice">
+
+            [Sample illustrative experiences demonstrating student outcomes]
+
+          </p>
+
+        </header>
+
+
+
+        <div class="testimonials-grid">
+
+          <div class="card card--bordered" data-reveal data-reveal-delay="1">
+
+            <div class="card__body">
+
+              <p style="font-size: 1.1rem; font-style: italic; margin-block-end: var(--space-6);">
+
+                "The focus on accessibility and standards in the Web Development track transformed how I think about frontend architecture. I now build software that everyone can use."
+
+              </p>
+
+              <div class="flex" style="align-items: center; gap: var(--space-3);">
+
+                <div style="width: 44px; height: 44px; border-radius: var(--radius-full); background: var(--color-primary-subtle); display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--color-primary);">
+
+                  L.A.
+
+                </div>
+
+                <div>
+
+                  <strong style="display: block;">Layla Al-Amiri</strong>
+
+                  <span style="font-size: var(--font-sm); color: var(--color-text-muted);">Web Development Cohort</span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="card card--bordered" data-reveal data-reveal-delay="2">
+
+            <div class="card__body">
+
+              <p style="font-size: 1.1rem; font-style: italic; margin-block-end: var(--space-6);">
+
+                "Prof. Rostova made multivariable calculus feel intuitive and deeply connected to physical engineering. The mentorship sessions were invaluable."
+
+              </p>
+
+              <div class="flex" style="align-items: center; gap: var(--space-3);">
+
+                <div style="width: 44px; height: 44px; border-radius: var(--radius-full); background: var(--color-primary-subtle); display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--color-primary);">
+
+                  Z.K.
+
+                </div>
+
+                <div>
+
+                  <strong style="display: block;">Zayd Kareem</strong>
+
+                  <span style="font-size: var(--font-sm); color: var(--color-text-muted);">Applied Mathematics Cohort</span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="card card--bordered" data-reveal data-reveal-delay="3">
+
+            <div class="card__body">
+
+              <p style="font-size: 1.1rem; font-style: italic; margin-block-end: var(--space-6);">
+
+                "The bilingual curriculum allowed me to write academic research with precision in both Arabic and English. That duality opened international publishing doors for me."
+
+              </p>
+
+              <div class="flex" style="align-items: center; gap: var(--space-3);">
+
+                <div style="width: 44px; height: 44px; border-radius: var(--radius-full); background: var(--color-primary-subtle); display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--color-primary);">
+
+                  F.M.
+
+                </div>
+
+                <div>
+
+                  <strong style="display: block;">Fatima Mansoori</strong>
+
+                  <span style="font-size: var(--font-sm); color: var(--color-text-muted);">Arabic & Academic Writing Cohort</span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
 
     <!-- Final Admissions CTA Banner -->
+
     <section class="section">
+
       <div class="container">
+
         <div class="cta-banner" data-reveal>
+
           <span class="cta-banner__label" data-i18n="home.cta.label">Start Your Journey</span>
+
           <h2 class="cta-banner__title" data-i18n="home.cta.title">Begin Your Academic Pathway Today</h2>
+
           <p class="cta-banner__description" data-i18n="home.cta.description">
+
             Join a vibrant community of passionate learners and visionary faculty. Explore admission requirements, schedule an advising session, or apply directly.
+
           </p>
+
           <div class="cta-banner__actions">
+
             <a href="admissions.html" class="btn btn--secondary btn--lg" data-i18n="home.cta.primary">Apply for Next Cohort</a>
-            <a href="contact.html" class="btn btn--outline btn--lg" style="color: #ffffff; border-color: rgba(255,255,255,0.4);" data-i18n="home.cta.secondary">Speak to an Advisor</a>
+
+            <a href="contact.html" class="btn btn--outline-light btn--lg" data-i18n="home.cta.secondary">Speak to an Advisor</a>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
 
+
+
   <!-- Site Footer -->
+
   <footer class="site-footer">
+
     <div class="container">
+
       <div class="footer__top">
+
         <div class="footer__brand">
+
           <a href="index.html" class="nav__logo" style="color: #ffffff; margin-block-end: var(--space-4); display: inline-flex;">
+
             <span class="nav__logo-text">Next Gen <span>Academy</span></span>
+
           </a>
+
           <p class="footer__description" data-i18n="footer.brand.description">
+
             Next Gen Academy is dedicated to rigorous, future-facing education combining technological fluency, scientific inquiry, and humanistic values.
+
           </p>
 
+
+
           <!-- Newsletter Form -->
+
           <div class="footer__newsletter" style="margin-block-start: var(--space-6);">
+
             <p style="font-size: var(--font-sm); font-weight: var(--weight-semibold); color: #ffffff; margin-block-end: var(--space-2);" data-i18n="footer.newsletter.title">
+
               Subscribe to Academic Briefings
+
             </p>
+
             <form data-nga-newsletter class="flex gap-2" style="max-width: 360px;">
+
               <input type="email" class="form-control" placeholder="Enter your email" required data-i18n-placeholder="footer.newsletter.placeholder" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); color: #ffffff;">
+
               <button type="submit" class="btn btn--primary btn--sm" data-i18n="footer.newsletter.subscribe">Subscribe</button>
+
             </form>
+
             <div class="newsletter-feedback" hidden style="margin-block-start: var(--space-2); font-size: var(--font-xs);"></div>
+
           </div>
+
         </div>
 
+
+
         <div class="footer__nav-group">
+
           <p class="footer__nav-title" data-i18n="footer.quickLinks">Quick Links</p>
+
           <ul style="list-style: none; padding: 0;">
+
             <li><a href="about.html" class="footer__nav-link" data-i18n="nav.about">About Us</a></li>
+
             <li><a href="courses.html" class="footer__nav-link" data-i18n="nav.courses">Course Catalog</a></li>
+
             <li><a href="admissions.html" class="footer__nav-link" data-i18n="nav.admissions">Admissions</a></li>
+
             <li><a href="faculty.html" class="footer__nav-link" data-i18n="nav.faculty">Faculty</a></li>
+
             <li><a href="student-life.html" class="footer__nav-link" data-i18n="nav.studentLife">Student Life</a></li>
+
           </ul>
+
         </div>
 
+
+
         <div class="footer__nav-group">
+
           <p class="footer__nav-title" data-i18n="footer.programs">Academic Areas</p>
+
           <ul style="list-style: none; padding: 0;">
+
             <li><a href="courses.html?cat=technology" class="footer__nav-link" data-i18n="courses.category.technology">Technology & CS</a></li>
+
             <li><a href="courses.html?cat=mathematics" class="footer__nav-link" data-i18n="courses.category.mathematics">Mathematics</a></li>
+
             <li><a href="courses.html?cat=sciences" class="footer__nav-link" data-i18n="courses.category.sciences">Natural Sciences</a></li>
+
             <li><a href="courses.html?cat=languages" class="footer__nav-link" data-i18n="courses.category.languages">Languages & Rhetoric</a></li>
+
             <li><a href="courses.html?cat=business" class="footer__nav-link" data-i18n="courses.category.business">Business & Analytics</a></li>
+
           </ul>
+
         </div>
 
+
+
         <div class="footer__nav-group">
+
           <p class="footer__nav-title" data-i18n="footer.legal">Support & Policies</p>
+
           <ul style="list-style: none; padding: 0;">
+
             <li><a href="faq.html" class="footer__nav-link" data-i18n="nav.faq">Frequently Asked Questions</a></li>
+
             <li><a href="resources.html" class="footer__nav-link" data-i18n="nav.resources">Learning Resources</a></li>
+
             <li><a href="events.html" class="footer__nav-link" data-i18n="nav.events">Events & Seminars</a></li>
+
             <li><a href="privacy-policy.html" class="footer__nav-link" data-i18n="footer.privacy">Privacy Policy</a></li>
+
             <li><a href="terms.html" class="footer__nav-link" data-i18n="footer.terms">Terms of Service</a></li>
+
             <li><a href="accessibility.html" class="footer__nav-link" data-i18n="footer.accessibility">Accessibility Statement</a></li>
+
           </ul>
+
         </div>
+
       </div>
+
+
 
       <div class="footer__bottom flex-between">
+
         <p style="font-size: var(--font-sm); color: var(--color-footer-text);">
+
           &copy; <span data-year>2026</span> Next Gen Academy. <span data-i18n="footer.copyright">All rights reserved. Designed for static hosting.</span>
+
         </p>
 
+
+
         <div class="flex gap-4">
+
           <a href="privacy-policy.html" class="footer__nav-link" style="font-size: var(--font-xs);" data-i18n="footer.privacy">Privacy</a>
+
           <a href="terms.html" class="footer__nav-link" style="font-size: var(--font-xs);" data-i18n="footer.terms">Terms</a>
+
           <a href="accessibility.html" class="footer__nav-link" style="font-size: var(--font-xs);" data-i18n="footer.accessibility">Accessibility</a>
+
         </div>
+
       </div>
+
     </div>
+
   </footer>
 
+
+
   <!-- Back to Top Button -->
+
   <button type="button" class="back-to-top" aria-label="Back to top of page" title="Back to top">
-    ↑
+
+    †‘
+
   </button>
+
 </body>
+
 </html>
+
+
+

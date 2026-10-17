@@ -13,10 +13,8 @@
 
   /** Resolve which theme to actually apply */
   function resolveTheme(preference) {
-    if (preference === 'light') return 'light';
     if (preference === 'dark') return 'dark';
-    // 'system' or unknown → follow OS
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return 'light'; // default to light
   }
 
   /** Apply a resolved theme (light/dark) to the document element */
@@ -31,9 +29,9 @@
 
   /** Read stored preference and apply immediately */
   function initTheme() {
-    let preference = 'system';
+    let preference = 'light';
     try {
-      preference = localStorage.getItem(STORAGE_KEY) || 'system';
+      preference = localStorage.getItem(STORAGE_KEY) || 'light';
     } catch (_) { /* storage blocked */ }
     applyTheme(resolveTheme(preference));
   }
@@ -47,11 +45,12 @@
     resolveTheme,
     applyTheme,
     getPreference() {
-      try { return localStorage.getItem(STORAGE_KEY) || 'system'; } catch (_) { return 'system'; }
+      try { return localStorage.getItem(STORAGE_KEY) || 'light'; } catch (_) { return 'light'; }
     },
     setPreference(pref) {
-      try { localStorage.setItem(STORAGE_KEY, pref); } catch (_) { /* blocked */ }
-      applyTheme(resolveTheme(pref));
+      const resolved = pref === 'dark' ? 'dark' : 'light';
+      try { localStorage.setItem(STORAGE_KEY, resolved); } catch (_) { /* blocked */ }
+      applyTheme(resolved);
     }
   };
 }());

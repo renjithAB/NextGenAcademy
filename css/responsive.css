@@ -47,7 +47,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   /* Nav */
   .nav__menu {
     display: none;
@@ -74,10 +74,18 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   /* Nav */
   .nav__hamburger {
     display: none;
+  }
+
+  .nav__menu {
+    display: flex;
+  }
+
+  .nav__desktop-actions {
+    display: flex;
   }
 
   .nav__mobile-overlay,
@@ -103,22 +111,6 @@
 
   .footer__top {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* ─── Desktop Navigation ─── */
-
-@media (min-width: 1024px) {
-  .nav__hamburger {
-    display: none;
-  }
-
-  .nav__menu {
-    display: flex;
-  }
-
-  .nav__desktop-actions {
-    display: flex;
   }
 }
 

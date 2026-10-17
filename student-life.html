@@ -1,256 +1,296 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="light" data-title-key="studentLife.title">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Life & Campus Community — Next Gen Academy</title>
-  <meta name="description" content="Discover student clubs, collaborative studios, peer mentoring networks, and extracurricular scholarship at Next Gen Academy.">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/pages.css">
-  <link rel="stylesheet" href="css/responsive.css">
-  <link rel="stylesheet" href="css/animations.css">
-
-  <script src="js/theme.js"></script>
-  <script src="js/utilities.js" defer></script>
-  <script src="js/i18n.js" defer></script>
-  <script src="js/navigation.js" defer></script>
-  <script src="js/animations.js" defer></script>
-  <script src="js/forms.js" defer></script>
-  <script src="js/courses.js" defer></script>
-  <script src="js/main.js" defer></script>
-</head>
-<body class="page-wrapper">
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container flex-between">
-      <a href="index.html" class="nav__logo" aria-label="Next Gen Academy Home">
-        <span class="nav__logo-mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
-            <rect width="32" height="32" rx="8" fill="currentColor"/>
-            <path d="M9 23V9l7 9 7-9v14" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        <span class="nav__logo-text">Next Gen <span>Academy</span></span>
-      </a>
-
-      <nav class="nav__menu" aria-label="Primary Navigation">
-        <a href="index.html" class="nav__link" data-i18n="nav.home">Home</a>
-        <a href="about.html" class="nav__link" data-i18n="nav.about">About</a>
-        <a href="courses.html" class="nav__link" data-i18n="nav.courses">Courses</a>
-        <a href="admissions.html" class="nav__link" data-i18n="nav.admissions">Admissions</a>
-        <a href="faculty.html" class="nav__link" data-i18n="nav.faculty">Faculty</a>
-        <a href="student-life.html" class="nav__link active" data-i18n="nav.studentLife">Student Life</a>
-        <a href="resources.html" class="nav__link" data-i18n="nav.resources">Resources</a>
-        <a href="events.html" class="nav__link" data-i18n="nav.events">Events</a>
-        <a href="faq.html" class="nav__link" data-i18n="nav.faq">FAQ</a>
-        <a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a>
-      </nav>
-
-      <div class="nav__desktop-actions flex" style="align-items: center; gap: var(--space-3);">
-        <div class="dropdown" data-lang-toggle>
-          <button type="button" class="btn btn--outline btn--sm" data-lang-toggle-btn aria-label="Toggle language">
-            🌐 <span data-lang-current>EN</span>
-          </button>
-        </div>
-        <div class="dropdown">
-          <button type="button" class="btn btn--outline btn--sm btn--icon" data-theme-cycle aria-label="Toggle visual theme">
-            <span class="theme-icon">☀️</span>
-          </button>
-        </div>
-        <a href="admissions.html" class="btn btn--primary btn--sm" data-i18n="nav.applyNow">Apply Now</a>
-      </div>
-
-      <button type="button" class="nav__hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- Mobile Drawer Menu -->
-  <div class="nav__mobile-overlay" hidden></div>
-  <div class="nav__mobile-menu" id="mobile-nav" hidden aria-hidden="true">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-block-end: var(--space-6);">
-      <span class="nav__logo-text">Next Gen <span>Academy</span></span>
-      <button type="button" class="btn btn--ghost btn--icon" onclick="Navigation.closeMobileMenu()" aria-label="Close menu">&times;</button>
-    </div>
-    <nav class="flex-col gap-4" style="margin-block-end: var(--space-8);">
-      <a href="index.html" class="nav__link" data-i18n="nav.home">Home</a>
-      <a href="about.html" class="nav__link" data-i18n="nav.about">About</a>
-      <a href="courses.html" class="nav__link" data-i18n="nav.courses">Courses</a>
-      <a href="admissions.html" class="nav__link" data-i18n="nav.admissions">Admissions</a>
-      <a href="faculty.html" class="nav__link" data-i18n="nav.faculty">Faculty</a>
-      <a href="student-life.html" class="nav__link active" data-i18n="nav.studentLife">Student Life</a>
-      <a href="resources.html" class="nav__link" data-i18n="nav.resources">Resources</a>
-      <a href="events.html" class="nav__link" data-i18n="nav.events">Events</a>
-      <a href="faq.html" class="nav__link" data-i18n="nav.faq">FAQ</a>
-      <a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a>
-    </nav>
-  </div>
-
-  <main class="page-main" id="main-content">
-    <header class="page-hero">
-      <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <div class="breadcrumb__item">
-            <a href="index.html" class="breadcrumb__link" data-i18n="nav.home">Home</a>
-            <span class="breadcrumb__separator">/</span>
-          </div>
-          <div class="breadcrumb__item">
-            <span class="breadcrumb__current" aria-current="page" data-i18n="nav.studentLife">Student Life</span>
-          </div>
-        </nav>
-        <span class="page-hero__label" data-i18n="studentLife.title">Campus & Community</span>
-        <h1 class="page-hero__title" data-i18n="studentLife.title">Student Life & Culture</h1>
-        <p class="page-hero__description" data-i18n="studentLife.description">
-          A collegiate ecosystem supporting curiosity, collaboration, and personal growth alongside rigorous academic pursuits.
-        </p>
-      </div>
-    </header>
-
-    <!-- Community & Environment Section -->
-    <section class="section">
-      <div class="container">
-        <header class="section-header" data-reveal>
-          <span class="section-label" data-i18n="studentLife.community.title">Our Community</span>
-          <h2 class="section-title">An Intellectual Home for Inquisitive Minds</h2>
-          <p class="section-description">
-            Education transcends textbooks. Our learners collaborate in open laboratories, participate in lively debates, and form lifelong peer bonds.
-          </p>
-        </header>
-
-        <div class="grid grid-3">
-          <div class="card card--bordered" data-reveal data-reveal-delay="1">
-            <div class="card__body">
-              <span style="font-size: 2rem; display: block; margin-block-end: var(--space-4);">💻</span>
-              <h3 class="card__title">Collaborative Studios</h3>
-              <p class="card__description">
-                Open technical studios equipped with hardware debugging stations, fast internet, and quiet study alcoves.
-              </p>
-            </div>
-          </div>
-
-          <div class="card card--bordered" data-reveal data-reveal-delay="2">
-            <div class="card__body">
-              <span style="font-size: 2rem; display: block; margin-block-end: var(--space-4);">📚</span>
-              <h3 class="card__title" data-i18n="studentLife.support.title">Academic Support Clinics</h3>
-              <p class="card__description">
-                Writing labs, peer calculus salons, and faculty office hours ensure no scholar faces analytical hurdles in isolation.
-              </p>
-            </div>
-          </div>
-
-          <div class="card card--bordered" data-reveal data-reveal-delay="3">
-            <div class="card__body">
-              <span style="font-size: 2rem; display: block; margin-block-end: var(--space-4);">🏆</span>
-              <h3 class="card__title" data-i18n="studentLife.activities.title">Student Societies & Clubs</h3>
-              <p class="card__description">
-                Active student-run guilds in algorithmic programming, bilingual debate, visual arts, and ecological science.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Visual Gallery Section -->
-    <section class="section section--alt">
-      <div class="container">
-        <header class="section-header" data-reveal>
-          <span class="section-label">Campus Environment</span>
-          <h2 class="section-title">Moments of Inquiry & Collaboration</h2>
-          <p class="section-description">Everyday scenes of scholarship, laboratory experimentation, and community connection.</p>
-        </header>
-
-        <div class="gallery-grid" data-reveal>
-          <div class="gallery-item">
-            <img src="assets/images/event-hackathon.svg" alt="Students collaborating during the 48-hour algorithm hackathon">
-          </div>
-          <div class="gallery-item">
-            <img src="assets/images/course-math.svg" alt="Applied mathematics problem-solving session">
-          </div>
-          <div class="gallery-item">
-            <img src="assets/images/event-symposium.svg" alt="Accessibility seminar discussion in progress">
-          </div>
-          <div class="gallery-item">
-            <img src="assets/images/course-design.svg" alt="Visual typography critique in studio">
-          </div>
-          <div class="gallery-item">
-            <img src="assets/images/event-science.svg" alt="Laboratory testing of physical prototypes">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Student Societies Walkthrough -->
-    <section class="section">
-      <div class="container container--narrow">
-        <header class="section-header" data-reveal>
-          <span class="section-label">Extracurricular Pursuits</span>
-          <h2 class="section-title">Active Student Guilds</h2>
-        </header>
-
-        <div class="accordion" data-reveal>
-          <div class="accordion__item">
-            <button class="accordion__trigger" aria-expanded="true" aria-controls="club-1">
-              <span>Algorithmic Programming Society</span>
-              <span class="accordion__icon" aria-hidden="true"></span>
-            </button>
-            <div class="accordion__panel" id="club-1">
-              <div class="accordion__content">
-                <p>Meets weekly to analyze advanced dynamic programming, graph traversal algorithms, and compete in collegiate hackathons.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion__item">
-            <button class="accordion__trigger" aria-expanded="false" aria-controls="club-2">
-              <span>Bilingual Debate & Dialectics Forum</span>
-              <span class="accordion__icon" aria-hidden="true"></span>
-            </button>
-            <div class="accordion__panel" id="club-2" hidden>
-              <div class="accordion__content">
-                <p>Hosts formal parliamentary debate competitions in Arabic and English, sharpening ethical reasoning and rhetorical articulation.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion__item">
-            <button class="accordion__trigger" aria-expanded="false" aria-controls="club-3">
-              <span>Design & Visual Communication Guild</span>
-              <span class="accordion__icon" aria-hidden="true"></span>
-            </button>
-            <div class="accordion__panel" id="club-3" hidden>
-              <div class="accordion__content">
-                <p>Organizes design sprint workshops, bilingual typeface specimen reviews, and provides creative collateral for campus initiatives.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer__bottom flex-between">
-        <p style="font-size: var(--font-sm); color: var(--color-footer-text);">&copy; <span data-year>2026</span> Next Gen Academy.</p>
-        <div class="flex gap-4">
-          <a href="student-life.html" class="footer__nav-link" style="font-size: var(--font-xs);" data-i18n="nav.studentLife">Student Life</a>
-          <a href="events.html" class="footer__nav-link" style="font-size: var(--font-xs);" data-i18n="nav.events">Events</a>
-          <a href="admissions.html" class="footer__nav-link" style="font-size: var(--font-xs);" data-i18n="nav.admissions">Admissions</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <button type="button" class="back-to-top" aria-label="Back to top">↑</button>
-</body>
-</html>
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light" data-title-key="studentLife.title">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Life & Campus Community — Next Gen Academy</title>
+  <meta name="description" content="Discover student clubs, collaborative studios, peer mentoring networks, and extracurricular scholarship at Next Gen Academy.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <script src="js/theme.js"></script>
+  <script src="js/shared-layout.js" defer></script>
+  <script src="js/utilities.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/navigation.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/forms.js" defer></script>
+  <script src="js/courses.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body class="page-wrapper">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container flex-between">
+      <a href="index.html" class="nav__logo" aria-label="Next Gen Academy Home">
+        <span class="nav__logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+            <rect width="32" height="32" rx="8" fill="currentColor"/>
+            <path d="M9 23V9l7 9 7-9v14" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="nav__logo-text">Next Gen <span>Academy</span></span>
+      </a>
+
+      <nav class="nav__menu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav__link" data-i18n="nav.home">Home</a>
+        <a href="about.html" class="nav__link" data-i18n="nav.about">About</a>
+        <a href="courses.html" class="nav__link" data-i18n="nav.courses">Courses</a>
+        <a href="admissions.html" class="nav__link" data-i18n="nav.admissions">Admissions</a>
+        <a href="faculty.html" class="nav__link" data-i18n="nav.faculty">Faculty</a>
+        <a href="student-life.html" class="nav__link active" data-i18n="nav.studentLife">Student Life</a>
+        <a href="resources.html" class="nav__link" data-i18n="nav.resources">Resources</a>
+        <a href="events.html" class="nav__link" data-i18n="nav.events">Events</a>
+        <a href="faq.html" class="nav__link" data-i18n="nav.faq">FAQ</a>
+        <a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+            <!-- Action Controls (Language, Theme, CTA) -->
+      <div class="nav__desktop-actions" data-lang-toggle>
+        <!-- Language Switcher -->
+        <button type="button" class="lang-toggle-btn" data-lang-toggle-btn aria-label="Toggle language (English / العربية)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span data-lang-current>EN</span>
+        </button>
+
+        <!-- Theme Selector -->
+        <button type="button" class="theme-toggle-btn" data-theme-cycle aria-label="Toggle visual theme">
+          <span class="theme-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </span>
+        </button>
+
+        <!-- Apply CTA -->
+        <a href="admissions.html" class="btn btn--primary nav-cta-btn" data-i18n="nav.applyNow">Apply Now</a>
+      </div>
+
+
+
+      <button type="button" class="nav__hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="nav__mobile-overlay" hidden></div>
+  <div class="nav__mobile-menu" id="mobile-nav" hidden aria-hidden="true">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-block-end: var(--space-6);">
+      <span class="nav__logo-text">Next Gen <span>Academy</span></span>
+      <button type="button" class="btn btn--ghost btn--icon" onclick="Navigation.closeMobileMenu()" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="flex-col gap-4" style="margin-block-end: var(--space-8);">
+      <a href="index.html" class="nav__link" data-i18n="nav.home">Home</a>
+      <a href="about.html" class="nav__link" data-i18n="nav.about">About</a>
+      <a href="courses.html" class="nav__link" data-i18n="nav.courses">Courses</a>
+      <a href="admissions.html" class="nav__link" data-i18n="nav.admissions">Admissions</a>
+      <a href="faculty.html" class="nav__link" data-i18n="nav.faculty">Faculty</a>
+      <a href="student-life.html" class="nav__link active" data-i18n="nav.studentLife">Student Life</a>
+      <a href="resources.html" class="nav__link" data-i18n="nav.resources">Resources</a>
+      <a href="events.html" class="nav__link" data-i18n="nav.events">Events</a>
+      <a href="faq.html" class="nav__link" data-i18n="nav.faq">FAQ</a>
+      <a href="contact.html" class="nav__link" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="flex-col gap-4" style="border-block-start: 1px solid var(--color-border); padding-block-start: var(--space-4);">
+      <div class="flex gap-2">
+        <button type="button" class="btn btn--outline btn--sm" data-lang-btn="en" style="flex: 1;">English (EN)</button>
+        <button type="button" class="btn btn--outline btn--sm" data-lang-btn="ar" style="flex: 1;">العربية (AR)</button>
+      </div>
+      <div class="flex gap-2">
+        <button type="button" class="btn btn--outline btn--sm" data-theme-btn="light" style="flex: 1;">Light</button>
+        <button type="button" class="btn btn--outline btn--sm" data-theme-btn="dark" style="flex: 1;">Dark</button>
+        <button type="button" class="btn btn--outline btn--sm" data-theme-btn="system" style="flex: 1;">System</button>
+      </div>
+      <a href="admissions.html" class="btn btn--primary" style="text-align: center; justify-content: center;" data-i18n="nav.applyNow">Apply Now</a>
+    </div>
+  </div>
+
+  <main class="page-main" id="main-content">
+    <header class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <div class="breadcrumb__item">
+            <a href="index.html" class="breadcrumb__link" data-i18n="nav.home">Home</a>
+            <span class="breadcrumb__separator">/</span>
+          </div>
+          <div class="breadcrumb__item">
+            <span class="breadcrumb__current" aria-current="page" data-i18n="nav.studentLife">Student Life</span>
+          </div>
+        </nav>
+        <span class="page-hero__label" data-i18n="studentLife.title">Campus & Community</span>
+        <h1 class="page-hero__title" data-i18n="studentLife.title">Student Life & Culture</h1>
+        <p class="page-hero__description" data-i18n="studentLife.description">
+          A collegiate ecosystem supporting curiosity, collaboration, and personal growth alongside rigorous academic pursuits.
+        </p>
+      </div>
+    </header>
+
+    <!-- Community & Environment Section -->
+    <section class="section">
+      <div class="container">
+        <header class="section-header" data-reveal>
+          <span class="section-label" data-i18n="studentLife.community.title">Our Community</span>
+          <h2 class="section-title">An Intellectual Home for Inquisitive Minds</h2>
+          <p class="section-description">
+            Education transcends textbooks. Our learners collaborate in open laboratories, participate in lively debates, and form lifelong peer bonds.
+          </p>
+        </header>
+
+                <div class="grid grid-3">
+          <div class="card card--bordered" data-reveal data-reveal-delay="1">
+            <div class="card__body">
+              <div style="width: 48px; height: 48px; border-radius: var(--radius-lg); background-color: var(--color-primary-subtle); display: flex; align-items: center; justify-content: center; margin-block-end: var(--space-4); color: var(--color-primary);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+              </div>
+              <h3 class="card__title">Collaborative Studios</h3>
+              <p class="card__description">
+                Open technical studios equipped with hardware debugging stations, fast internet, and quiet study alcoves.
+              </p>
+            </div>
+          </div>
+
+          <div class="card card--bordered" data-reveal data-reveal-delay="2">
+            <div class="card__body">
+              <div style="width: 48px; height: 48px; border-radius: var(--radius-lg); background-color: var(--color-primary-subtle); display: flex; align-items: center; justify-content: center; margin-block-end: var(--space-4); color: var(--color-primary);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+              </div>
+              <h3 class="card__title" data-i18n="studentLife.support.title">Academic Support Clinics</h3>
+              <p class="card__description">
+                Writing labs, peer calculus salons, and faculty office hours ensure no scholar faces analytical hurdles in isolation.
+              </p>
+            </div>
+          </div>
+
+          <div class="card card--bordered" data-reveal data-reveal-delay="3">
+            <div class="card__body">
+              <div style="width: 48px; height: 48px; border-radius: var(--radius-lg); background-color: var(--color-primary-subtle); display: flex; align-items: center; justify-content: center; margin-block-end: var(--space-4); color: var(--color-primary);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="7"/>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                </svg>
+              </div>
+              <h3 class="card__title" data-i18n="studentLife.activities.title">Student Societies & Clubs</h3>
+              <p class="card__description">
+                Active student-run guilds in algorithmic programming, bilingual debate, visual arts, and ecological science.
+              </p>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Visual Gallery Section -->
+    <section class="section section--alt">
+      <div class="container">
+        <header class="section-header" data-reveal>
+          <span class="section-label">Campus Environment</span>
+          <h2 class="section-title">Moments of Inquiry & Collaboration</h2>
+          <p class="section-description">Everyday scenes of scholarship, laboratory experimentation, and community connection.</p>
+        </header>
+
+        <div class="gallery-grid" data-reveal>
+          <div class="gallery-item">
+            <img src="assets/images/event-hackathon.svg" alt="Students collaborating during the 48-hour algorithm hackathon">
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/course-math.svg" alt="Applied mathematics problem-solving session">
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/event-symposium.svg" alt="Accessibility seminar discussion in progress">
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/course-design.svg" alt="Visual typography critique in studio">
+          </div>
+          <div class="gallery-item">
+            <img src="assets/images/event-science.svg" alt="Laboratory testing of physical prototypes">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Societies Walkthrough -->
+    <section class="section">
+      <div class="container container--narrow">
+        <header class="section-header" data-reveal>
+          <span class="section-label">Extracurricular Pursuits</span>
+          <h2 class="section-title">Active Student Guilds</h2>
+        </header>
+
+        <div class="accordion" data-reveal>
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="true" aria-controls="club-1">
+              <span>Algorithmic Programming Society</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel" id="club-1">
+              <div class="accordion__content">
+                <p>Meets weekly to analyze advanced dynamic programming, graph traversal algorithms, and compete in collegiate hackathons.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="club-2">
+              <span>Bilingual Debate & Dialectics Forum</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel" id="club-2" hidden>
+              <div class="accordion__content">
+                <p>Hosts formal parliamentary debate competitions in Arabic and English, sharpening ethical reasoning and rhetorical articulation.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false" aria-controls="club-3">
+              <span>Design & Visual Communication Guild</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel" id="club-3" hidden>
+              <div class="accordion__content">
+                <p>Organizes design sprint workshops, bilingual typeface specimen reviews, and provides creative collateral for campus initiatives.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__bottom flex-between">
+        <p style="font-size: var(--font-sm); color: var(--color-footer-text);">&copy; <span data-year>2026</span> Next Gen Academy.</p>
+        <div class="flex gap-4">
+          <a href="student-life.html" class="footer__nav-link" style="font-size: var(--font-xs);" data-i18n="nav.studentLife">Student Life</a>
+          <a href="events.html" class="footer__nav-link" style="font-size: var(--font-xs);" data-i18n="nav.events">Events</a>
+          <a href="admissions.html" class="footer__nav-link" style="font-size: var(--font-xs);" data-i18n="nav.admissions">Admissions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top" aria-label="Back to top">†‘</button>
+</body>
+</html>
+

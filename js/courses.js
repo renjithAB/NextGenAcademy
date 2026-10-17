@@ -386,7 +386,7 @@ const Courses = (() => {
               </p>
               <div class="cta-banner__actions">
                 <a href="${root}/admissions.html" class="btn btn--primary btn--lg" data-i18n="nav.applyNow">Apply Now</a>
-                <a href="${root}/contact.html" class="btn btn--outline btn--lg" style="color:#fff;border-color:rgba(255,255,255,0.4);" data-i18n="nav.contact">Contact Us</a>
+                <a href="${root}/contact.html" class="btn btn--outline-light btn--lg" data-i18n="nav.contact">Contact Us</a>
               </div>
             </div>
           </section>

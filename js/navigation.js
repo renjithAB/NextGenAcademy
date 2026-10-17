@@ -25,8 +25,15 @@ const Navigation = (() => {
     if (!mobileMenu || !hamburger) return;
     mobileMenuOpen = true;
     mobileMenu.hidden = false;
+    mobileMenu.classList.add('open');
     mobileMenu.setAttribute('aria-hidden', 'false');
-    mobileOverlay?.removeAttribute('hidden');
+
+    if (mobileOverlay) {
+      mobileOverlay.hidden = false;
+      mobileOverlay.removeAttribute('hidden');
+      mobileOverlay.classList.add('open');
+    }
+
     hamburger.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
 
@@ -39,8 +46,15 @@ const Navigation = (() => {
     if (!mobileMenu || !hamburger) return;
     mobileMenuOpen = false;
     mobileMenu.hidden = true;
+    mobileMenu.classList.remove('open');
     mobileMenu.setAttribute('aria-hidden', 'true');
-    mobileOverlay?.setAttribute('hidden', '');
+
+    if (mobileOverlay) {
+      mobileOverlay.hidden = true;
+      mobileOverlay.setAttribute('hidden', '');
+      mobileOverlay.classList.remove('open');
+    }
+
     hamburger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
     hamburger.focus();
@@ -204,11 +218,11 @@ const Navigation = (() => {
       });
     });
 
-    // Cycle button (light → dark → system → light)
+    // Toggle button strictly between light and dark
     document.querySelectorAll('[data-theme-cycle]').forEach(btn => {
       btn.addEventListener('click', () => {
-        const pref = window.__NGA_THEME__?.getPreference() || 'system';
-        const next = pref === 'light' ? 'dark' : pref === 'dark' ? 'system' : 'light';
+        const pref = window.__NGA_THEME__?.getPreference() || 'light';
+        const next = pref === 'dark' ? 'light' : 'dark';
         window.__NGA_THEME__?.setPreference(next);
         updateThemeToggleUI(next);
         applyThemeTransition();
@@ -216,16 +230,8 @@ const Navigation = (() => {
     });
 
     // Initialize button state
-    const pref = window.__NGA_THEME__?.getPreference() || 'system';
+    const pref = window.__NGA_THEME__?.getPreference() || 'light';
     updateThemeToggleUI(pref);
-
-    // Listen for OS preference changes (when in system mode)
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      const currentPref = window.__NGA_THEME__?.getPreference();
-      if (currentPref === 'system') {
-        window.__NGA_THEME__?.setPreference('system');
-      }
-    });
   }
 
   function updateThemeToggleUI(pref) {
@@ -235,17 +241,21 @@ const Navigation = (() => {
       btn.classList.toggle('active', isActive);
     });
 
-    // Update icon on cycle buttons
+    // Update icon on cycle buttons with crisp SVGs (Sun for dark mode trigger, Moon for light mode trigger)
     document.querySelectorAll('[data-theme-cycle]').forEach(btn => {
       const icon = btn.querySelector('.theme-icon');
       if (!icon) return;
-      if (pref === 'dark') icon.textContent = '🌙';
-      else if (pref === 'light') icon.textContent = '☀️';
-      else icon.textContent = '💻';
+      if (pref === 'dark') {
+        // In dark mode: show Sun icon to switch to light
+        icon.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
+      } else {
+        // In light mode: show Moon icon to switch to dark
+        icon.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+      }
 
       const label = btn.querySelector('.theme-label');
       if (label) {
-        label.textContent = pref === 'dark' ? 'Dark' : pref === 'light' ? 'Light' : 'System';
+        label.textContent = pref === 'dark' ? 'Light' : 'Dark';
       }
     });
   }

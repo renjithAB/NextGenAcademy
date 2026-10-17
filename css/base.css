@@ -94,7 +94,7 @@ a {
               text-decoration-color var(--duration-fast) var(--ease-standard);
 }
 
-a:hover {
+a:not(.btn):hover {
   color: var(--color-primary-hover);
   text-decoration-color: currentColor;
 }

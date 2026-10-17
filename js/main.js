@@ -6,7 +6,12 @@
 document.addEventListener('DOMContentLoaded', async () => {
   'use strict';
 
-  // 1. Initialize Internationalization (i18n)
+  // 1. Initialize Shared Layout (Header, Navigation Drawer, Footer)
+  if (window.NextGenShared && typeof window.NextGenShared.renderSharedLayout === 'function') {
+    window.NextGenShared.renderSharedLayout();
+  }
+
+  // 2. Initialize Internationalization (i18n)
   if (window.i18n) {
     try {
       await window.i18n.init();
@@ -15,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // 2. Initialize Navigation & Layout controls
+  // 3. Initialize Navigation & Layout controls
   if (window.Navigation && typeof window.Navigation.init === 'function') {
     window.Navigation.init();
   }
