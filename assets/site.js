@@ -29,7 +29,7 @@ try { var h = document.querySelector(".hero"), o = new IntersectionObserver(func
 ;
 (function () {
     try {
-        var ENDPOINT = '';/* set to your form backend URL (Formspree, Getform, own API). Empty = demo mode */
+        var ENDPOINT = 'https://formsubmit.co/ajax/management@nextgen-academy.net';
         var d = document, h = d.documentElement, mo = d.getElementById('mo'), dlg = mo.querySelector('.md'), form = d.getElementById('cf'), tw = d.getElementById('tw'), btn = form.querySelector('.sub'), mode = 'enquiry', opened = 0, last = null, busy = false, COOL = 60000;
         function $$(s, r) { return [].slice.call((r || d).querySelectorAll(s)) }
         var cfg = { enquiry: { eye: 'Enquire now', title: 'How can we help?', sub: 'Tell us what you would like to know and our team will reply within one working day.', btn: 'Send Enquiry', word: 'enquiry' }, admission: { eye: 'Admissions 2026–27', title: 'Start your child’s application', sub: 'Share a few basic details and we will contact you with the next steps.', btn: 'Submit Application', word: 'application' } };
@@ -51,13 +51,35 @@ try { var h = document.querySelector(".hero"), o = new IntersectionObserver(func
         function ok(name) { close(); form.reset(); var first = name.split(' ')[0]; toast('success', 'Thank you, ' + first + '!', 'We’ve received your ' + cfg[mode].word + ' and will contact you within one working day.') }
         form.addEventListener('submit', function (e) {
             e.preventDefault(); if (busy) return; var bad = Object.keys(R).filter(function (n) { return val(n) }); var cb = form.elements.consent; if (!cb.checked) { d.getElementById('e-consent').textContent = 'Please accept to continue.'; bad.push('consent') } else d.getElementById('e-consent').textContent = ''; if (bad.length) { form.elements[bad[0]].focus(); return }
-            var data = { type: mode, name: clean(form.elements.name.value), email: clean(form.elements.email.value), phone: clean(form.elements.phone.value), message: clean(form.elements.message.value), consent: true, page: location.href, sent: new Date().toISOString() };
-            if (mode === 'admission') { data.child = clean(form.elements.child.value); data.grade = form.elements.grade.value } else data.program = form.elements.program.value;
-            if (form.elements.website.value) { ok(data.name); return }
+            var parentName = clean(form.elements.name.value);
+            var email = clean(form.elements.email.value);
+            var phone = clean(form.elements.phone.value);
+            var message = clean(form.elements.message.value);
+            var formTitle = mode === 'admission' ? 'Admission Application (2026–27)' : 'General Enquiry';
+            var data = {
+                _subject: 'NextGen Academy - New ' + formTitle + ' from ' + parentName,
+                _template: 'table',
+                _captcha: 'false',
+                _replyto: email,
+                'Form Type': formTitle,
+                'Parent / Guardian Name': parentName,
+                'Email Address': email,
+                'Phone Number': phone
+            };
+            if (mode === 'admission') {
+                data["Child's Name"] = clean(form.elements.child.value);
+                data["Grade Applying For"] = form.elements.grade.value;
+            } else {
+                data["Program of Interest"] = form.elements.program.value;
+            }
+            data['Message'] = message || '(No message provided)';
+            data['Page URL'] = location.href;
+            data['Submitted At'] = new Date().toLocaleString();
+            if (form.elements.website.value) { ok(parentName); return }
             if (Date.now() - opened < 2500) { toast('error', 'Please slow down', 'Wait a moment, then press send again.'); return }
             var w = left(); if (w > 0) { toast('error', 'Request already sent', 'Please wait ' + w + ' seconds before sending another message.'); return }
             busy = true; btn.classList.add('ld'); btn.disabled = true;
-            post(data).then(function () { mark(); ok(data.name) }, function (err) { toast('error', 'We couldn’t send your message', navigator.onLine === false || (err && err.message === 'offline') ? 'You appear to be offline. Check your connection and try again.' : 'Something went wrong on our side. Your details are still here, please try again.') }).then(function () { busy = false; btn.classList.remove('ld'); btn.disabled = false })
+            post(data).then(function () { mark(); ok(parentName) }, function (err) { toast('error', 'We couldn’t send your message', navigator.onLine === false || (err && err.message === 'offline') ? 'You appear to be offline. Check your connection and try again.' : 'Something went wrong on our side. Your details are still here, please try again.') }).then(function () { busy = false; btn.classList.remove('ld'); btn.disabled = false })
         });
     } catch (e) { }
 })()
