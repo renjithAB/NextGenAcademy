@@ -1,36 +1,53 @@
 try { var h = document.querySelector(".hero"), o = new IntersectionObserver(function (e) { h.classList.toggle("paused", !e[0].isIntersecting) }); o.observe(h) } catch (e) { }
 ;
 (function () {
-            try {
-                var d = document, h = d.documentElement, rm = matchMedia('(prefers-reduced-motion:reduce)').matches, t0 = performance.now(); function $$(s, r) { return [].slice.call((r || d).querySelectorAll(s)) }
-                var hd = $$('header.h')[0], sp = d.getElementById('sp'), tt = d.getElementById('tt'), links = $$('nav a'), tick = false;
-                function upd() { tick = false; var y = scrollY, mx = h.scrollHeight - innerHeight; sp.style.transform = 'scaleX(' + (mx > 0 ? y / mx : 0) + ')'; hd.classList.toggle('sc', y > 8); tt.classList.toggle('show', y > 700); if (y < 300) on(0) }
-                function on(i) { links.forEach(function (a, k) { a.classList.toggle('on', k === i) }) }
-                addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(upd) } }, { passive: true }); upd();
-                tt.addEventListener('click', function () { scrollTo({ top: 0, behavior: rm ? 'auto' : 'smooth' }) });
-                links.forEach(function (a) { a.addEventListener('click', function () { d.getElementById('nav').classList.remove('open') }) });
-                var spy = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting && scrollY >= 300) { var id = '#' + x.target.id; links.forEach(function (a, k) { if (k > 0 && a.getAttribute('href') === id) on(k) }) } }) }, { rootMargin: '-40% 0px -55% 0px' });
-                ['programs', 'campus', 'life', 'about', 'cta', 'footer'].forEach(function (id) { var e = d.getElementById(id); if (e) spy.observe(e) });
-                var nums = $$('.stats b');
-                if (!rm) nums.forEach(function (b) { var m = b.textContent.match(/([0-9,]+)(.*)/); if (m) { b.dataset.n = m[1].replace(/,/g, ''); b.dataset.s = m[2]; b.textContent = '0' + m[2] } });
-                function count(b) { var n = +b.dataset.n, s = b.dataset.s, t = performance.now(); (function f(now) { var p = Math.min(1, (now - t) / 1500), v = Math.round(n * (1 - Math.pow(1 - p, 3))); b.textContent = v.toLocaleString('en-US') + s; if (p < 1) requestAnimationFrame(f) })(t) }
-                function start() {
-                    if (rm) return;
-                    var st = $$('.stats')[0]; if (st) new IntersectionObserver(function (en, o) { if (en[0].isIntersecting) { o.disconnect(); nums.forEach(function (b) { if (b.dataset.n) count(b) }) } }, { threshold: .4 }).observe(st);
-                    var sel = '.head,.card,.q,.stats .w>div,.ct,.life .sec,.test .sec,.adm .w>div,.ic>div,footer .fg>div:not(.hand),.ab-top>*,.mvc,.val,.pq', cnt = new Map();
-                    var io = new IntersectionObserver(function (en) { en.forEach(function (x) { if (!x.isIntersecting) return; var e = x.target; io.unobserve(e); e.classList.add('in'); var sk = e.classList.contains('sk'); setTimeout(function () { e.classList.remove('sk') }, sk ? 550 + Math.random() * 300 : 0); setTimeout(function () { e.classList.remove('rv', 'in'); e.style.removeProperty('--d') }, sk ? 1800 : 1400) }) }, { rootMargin: '0px 0px -8% 0px', threshold: .1 });
-                    $$(sel).forEach(function (e) { var p = e.parentNode, i = cnt.get(p) || 0; cnt.set(p, i + 1); e.style.setProperty('--d', Math.min(i, 5) * 80 + 'ms'); e.classList.add('rv'); if (e.matches('.card,.q')) e.classList.add('sk'); io.observe(e) })
-                }
-                function fin() { var w = Math.max(0, (rm ? 0 : 250) - (performance.now() - t0)); setTimeout(function () { h.classList.add('loaded'); start() }, w) }
-                function ready() { (d.fonts && d.fonts.ready ? d.fonts.ready : Promise.resolve()).then(fin, fin) }
-                if (d.readyState === 'complete') ready(); else addEventListener('load', ready)
-            } catch (e) { h.classList.add('loaded') }
-        })()
-;
+    try {
+        var d = document, h = d.documentElement, rm = matchMedia('(prefers-reduced-motion:reduce)').matches, t0 = performance.now(); function $$(s, r) { return [].slice.call((r || d).querySelectorAll(s)) }
+        var hd = $$('header.h')[0], sp = d.getElementById('sp'), tt = d.getElementById('tt'), links = $$('nav a'), tick = false;
+        function upd() { tick = false; var y = scrollY, mx = h.scrollHeight - innerHeight; sp.style.transform = 'scaleX(' + (mx > 0 ? y / mx : 0) + ')'; hd.classList.toggle('sc', y > 8); tt.classList.toggle('show', y > 700); if (y < 300) on(0) }
+        function on(i) { links.forEach(function (a, k) { a.classList.toggle('on', k === i) }) }
+        addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(upd) } }, { passive: true }); upd();
+        tt.addEventListener('click', function () { scrollTo({ top: 0, behavior: rm ? 'auto' : 'smooth' }) });
+        links.forEach(function (a) { a.addEventListener('click', function () { d.getElementById('nav').classList.remove('open') }) });
+        var spy = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting && scrollY >= 300) { var id = '#' + x.target.id; links.forEach(function (a, k) { if (k > 0 && a.getAttribute('href') === id) on(k) }) } }) }, { rootMargin: '-40% 0px -55% 0px' });
+        ['programs', 'campus', 'life', 'about', 'cta', 'footer'].forEach(function (id) { var e = d.getElementById(id); if (e) spy.observe(e) });
+        var nums = $$('.stats b');
+        if (!rm) nums.forEach(function (b) { var m = b.textContent.match(/([0-9,]+)(.*)/); if (m) { b.dataset.n = m[1].replace(/,/g, ''); b.dataset.s = m[2]; b.textContent = '0' + m[2] } });
+        function count(b) { var n = +b.dataset.n, s = b.dataset.s, t = performance.now(); (function f(now) { var p = Math.min(1, (now - t) / 1500), v = Math.round(n * (1 - Math.pow(1 - p, 3))); b.textContent = v.toLocaleString('en-US') + s; if (p < 1) requestAnimationFrame(f) })(t) }
+        function start() {
+            if (rm) return;
+            var st = $$('.stats')[0]; if (st) new IntersectionObserver(function (en, o) { if (en[0].isIntersecting) { o.disconnect(); nums.forEach(function (b) { if (b.dataset.n) count(b) }) } }, { threshold: .4 }).observe(st);
+            var sel = '.head,.card,.q,.stats .w>div,.ct,.life .sec,.test .sec,.adm .w>div,.ic>div,footer .fg>div:not(.hand),.ab-top>*,.mvc,.val,.pq', cnt = new Map();
+            var io = new IntersectionObserver(function (en) { en.forEach(function (x) { if (!x.isIntersecting) return; var e = x.target; io.unobserve(e); e.classList.add('in'); var sk = e.classList.contains('sk'); setTimeout(function () { e.classList.remove('sk') }, sk ? 550 + Math.random() * 300 : 0); setTimeout(function () { e.classList.remove('rv', 'in'); e.style.removeProperty('--d') }, sk ? 1800 : 1400) }) }, { rootMargin: '0px 0px -8% 0px', threshold: .1 });
+            $$(sel).forEach(function (e) { var p = e.parentNode, i = cnt.get(p) || 0; cnt.set(p, i + 1); e.style.setProperty('--d', Math.min(i, 5) * 80 + 'ms'); e.classList.add('rv'); if (e.matches('.card,.q')) e.classList.add('sk'); io.observe(e) })
+        }
+        function fin() { var w = Math.max(0, (rm ? 0 : 250) - (performance.now() - t0)); setTimeout(function () { h.classList.add('loaded'); start() }, w) }
+        function ready() { (d.fonts && d.fonts.ready ? d.fonts.ready : Promise.resolve()).then(fin, fin) }
+        if (d.readyState === 'complete') ready(); else addEventListener('load', ready)
+    } catch (e) { h.classList.add('loaded') }
+})()
+    ;
 (function () {
     try {
-        var ENDPOINT = 'https://formsubmit.co/ajax/management@nextgen-academy.net';
+        var ENDPOINT = '/api/enquiry';
+        var FALLBACK_ENDPOINT = 'https://formsubmit.co/ajax/management@nextgen-academy.net';
         var d = document, h = d.documentElement, mo = d.getElementById('mo'), dlg = mo.querySelector('.md'), form = d.getElementById('cf'), tw = d.getElementById('tw'), btn = form.querySelector('.sub'), mode = 'enquiry', opened = 0, last = null, busy = false, COOL = 60000;
+        var tsWidgetId = null;
+        function renderTurnstile() {
+            var c = d.getElementById('cf-turnstile');
+            if (!c || !window.turnstile) return;
+            try {
+                if (tsWidgetId === null) {
+                    tsWidgetId = turnstile.render('#cf-turnstile', {
+                        sitekey: window.CF_TURNSTILE_SITE_KEY || '0x4AAAAAAGAz8xlVp_LZOXXg',
+                        appearance: 'interaction-only',
+                        theme: 'light'
+                    });
+                } else {
+                    turnstile.reset(tsWidgetId);
+                }
+            } catch (e) { }
+        }
         function $$(s, r) { return [].slice.call((r || d).querySelectorAll(s)) }
         var cfg = { enquiry: { eye: 'Enquire now', title: 'How can we help?', sub: 'Tell us what you would like to know and our team will reply within one working day.', btn: 'Send Enquiry', word: 'enquiry' }, admission: { eye: 'Admissions 2026–27', title: 'Start your child’s application', sub: 'Share a few basic details and we will contact you with the next steps.', btn: 'Submit Application', word: 'application' } };
         function clean(v) { v = String(v || '').replace(/<[^>]*>/g, ''); return Array.prototype.filter.call(v, function (c) { var k = c.charCodeAt(0); return k > 31 && k !== 127 || k === 10 }).join('').trim() }
@@ -40,15 +57,41 @@ try { var h = document.querySelector(".hero"), o = new IntersectionObserver(func
         function clearErr() { Object.keys(R).forEach(function (n) { var el = form.elements[n]; if (el) { var w = el.closest('.fld'); w.classList.remove('bad'); d.getElementById('e-' + n).textContent = ''; el.removeAttribute('aria-invalid') } }); d.getElementById('e-consent').textContent = '' }
         Object.keys(R).forEach(function (n) { var el = form.elements[n]; el.addEventListener('blur', function () { if (clean(el.value) || el.closest('.fld').classList.contains('bad')) val(n) }); el.addEventListener('input', function () { if (el.closest('.fld').classList.contains('bad')) val(n) }) });
         function toast(type, title, msg) { while (tw.children.length >= 3) tw.removeChild(tw.firstChild); var t = d.createElement('div'); t.className = 'ts ' + type; t.setAttribute('role', type === 'error' ? 'alert' : 'status'); var i = d.createElement('span'); i.className = 'ti'; i.textContent = type === 'error' ? '!' : '✓'; var b = d.createElement('div'), s = d.createElement('strong'), p = d.createElement('p'); s.textContent = title; p.textContent = msg; b.appendChild(s); b.appendChild(p); var c = d.createElement('button'); c.className = 'tc'; c.type = 'button'; c.setAttribute('aria-label', 'Dismiss'); c.textContent = '×'; var pr = d.createElement('span'); pr.className = 'tp'; t.appendChild(i); t.appendChild(b); t.appendChild(c); t.appendChild(pr); tw.appendChild(t); function rm() { if (!t.parentNode) return; t.classList.add('out'); setTimeout(function () { t.parentNode && t.parentNode.removeChild(t) }, 300) } c.addEventListener('click', rm); setTimeout(rm, 5500) }
-        function open(m, trg) { mode = m; last = trg || d.activeElement; var c = cfg[m]; d.getElementById('me').textContent = c.eye; d.getElementById('mt').textContent = c.title; d.getElementById('ms').textContent = c.sub; btn.querySelector('span').textContent = c.btn; d.getElementById('mreq').style.display = m === 'enquiry' ? '' : 'none'; $$('[data-m]', form).forEach(function (f) { var on = f.dataset.m === m; f.hidden = !on; $$('input,select', f).forEach(function (x) { x.disabled = !on }) }); clearErr(); mo.hidden = false; requestAnimationFrame(function () { mo.classList.add('on') }); h.style.overflow = 'hidden'; opened = Date.now(); setTimeout(function () { form.elements.name.focus() }, 60) }
+        function open(m, trg) { mode = m; last = trg || d.activeElement; var c = cfg[m]; d.getElementById('me').textContent = c.eye; d.getElementById('mt').textContent = c.title; d.getElementById('ms').textContent = c.sub; btn.querySelector('span').textContent = c.btn; d.getElementById('mreq').style.display = m === 'enquiry' ? '' : 'none'; $$('[data-m]', form).forEach(function (f) { var on = f.dataset.m === m; f.hidden = !on; $$('input,select', f).forEach(function (x) { x.disabled = !on }) }); clearErr(); mo.hidden = false; requestAnimationFrame(function () { mo.classList.add('on') }); h.style.overflow = 'hidden'; opened = Date.now(); setTimeout(function () { form.elements.name.focus(); renderTurnstile() }, 60) }
         function close() { mo.classList.remove('on'); setTimeout(function () { mo.hidden = true; h.style.overflow = '' }, 250); if (last && last.focus) last.focus() }
         mo.addEventListener('mousedown', function (e) { if (e.target === mo) close() }); mo.querySelector('.mx').addEventListener('click', close);
         d.addEventListener('keydown', function (e) { if (mo.hidden) return; if (e.key === 'Escape') { close(); return } if (e.key === 'Tab') { var f = $$('button,input,select,textarea,a[href]', dlg).filter(function (x) { return !x.disabled && x.offsetParent !== null && x.tabIndex >= 0 }); if (!f.length) return; var a = f[0], z = f[f.length - 1]; if (e.shiftKey && d.activeElement === a) { e.preventDefault(); z.focus() } else if (!e.shiftKey && d.activeElement === z) { e.preventDefault(); a.focus() } } });
         $$('a.btn').forEach(function (a) { var t = a.textContent.trim(), m = t.indexOf('Enquire Now') === 0 ? 'enquiry' : t.indexOf('Apply for Admission') === 0 ? 'admission' : ''; if (m) a.addEventListener('click', function (e) { e.preventDefault(); open(m, a) }) });
         function left() { var t = 0; try { t = +localStorage.getItem('ng_last') || 0 } catch (e) { } t = Math.max(t, window.__ngLast || 0); return Math.ceil(Math.max(0, COOL - (Date.now() - t)) / 1000) }
         function mark() { window.__ngLast = Date.now(); try { localStorage.setItem('ng_last', String(Date.now())) } catch (e) { } }
-        function post(data) { if (!ENDPOINT) return new Promise(function (res, rej) { setTimeout(function () { navigator.onLine === false ? rej(new Error('offline')) : res() }, 1300) }); var ac = new AbortController(), to = setTimeout(function () { ac.abort() }, 12000); return fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data), signal: ac.signal }).then(function (r) { clearTimeout(to); if (!r.ok) throw new Error('http') }, function (e) { clearTimeout(to); throw e }) }
-        function ok(name) { close(); form.reset(); var first = name.split(' ')[0]; toast('success', 'Thank you, ' + first + '!', 'We’ve received your ' + cfg[mode].word + ' and will contact you within one working day.') }
+        function post(data) {
+            var target = (location.protocol === 'file:') ? FALLBACK_ENDPOINT : ENDPOINT;
+            var ac = new AbortController(), to = setTimeout(function () { ac.abort() }, 15000);
+            return fetch(target, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                body: JSON.stringify(data),
+                signal: ac.signal
+            }).then(function (r) {
+                clearTimeout(to);
+                if (r.status === 404 && target === ENDPOINT) {
+                    return fetch(FALLBACK_ENDPOINT, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                        body: JSON.stringify(data)
+                    }).then(function (fr) { if (!fr.ok) throw new Error('http'); return fr.json() });
+                }
+                if (!r.ok) {
+                    return r.json().then(function (err) {
+                        throw new Error(err && err.error ? err.error : 'http');
+                    }, function () {
+                        throw new Error('http');
+                    });
+                }
+                return r.json();
+            }, function (e) { clearTimeout(to); throw e });
+        }
+        function ok(name) { close(); form.reset(); if (window.turnstile && tsWidgetId !== null) turnstile.reset(tsWidgetId); var first = name.split(' ')[0]; toast('success', 'Thank you, ' + first + '!', 'We’ve received your ' + cfg[mode].word + ' and will contact you within one working day.') }
         form.addEventListener('submit', function (e) {
             e.preventDefault(); if (busy) return; var bad = Object.keys(R).filter(function (n) { return val(n) }); var cb = form.elements.consent; if (!cb.checked) { d.getElementById('e-consent').textContent = 'Please accept to continue.'; bad.push('consent') } else d.getElementById('e-consent').textContent = ''; if (bad.length) { form.elements[bad[0]].focus(); return }
             var parentName = clean(form.elements.name.value);
@@ -56,7 +99,18 @@ try { var h = document.querySelector(".hero"), o = new IntersectionObserver(func
             var phone = clean(form.elements.phone.value);
             var message = clean(form.elements.message.value);
             var formTitle = mode === 'admission' ? 'Admission Application (2026–27)' : 'General Enquiry';
+            var tsToken = window.turnstile && tsWidgetId !== null ? turnstile.getResponse(tsWidgetId) : '';
             var data = {
+                type: mode,
+                name: parentName,
+                email: email,
+                phone: phone,
+                message: message,
+                website: form.elements.website ? form.elements.website.value : '',
+                b_company_fax: form.elements.b_company_fax ? form.elements.b_company_fax.value : '',
+                turnstileToken: tsToken,
+                page: location.href,
+                sent: new Date().toISOString(),
                 _subject: 'NextGen Academy - New ' + formTitle + ' from ' + parentName,
                 _template: 'table',
                 _captcha: 'false',
@@ -64,22 +118,33 @@ try { var h = document.querySelector(".hero"), o = new IntersectionObserver(func
                 'Form Type': formTitle,
                 'Parent / Guardian Name': parentName,
                 'Email Address': email,
-                'Phone Number': phone
+                'Phone Number': phone,
+                'Message': message || '(No message provided)',
+                'Submitted At': new Date().toLocaleString()
             };
             if (mode === 'admission') {
-                data["Child's Name"] = clean(form.elements.child.value);
-                data["Grade Applying For"] = form.elements.grade.value;
+                data.child = clean(form.elements.child.value);
+                data.grade = form.elements.grade.value;
+                data["Child's Name"] = data.child;
+                data["Grade Applying For"] = data.grade;
             } else {
-                data["Program of Interest"] = form.elements.program.value;
+                data.program = form.elements.program.value;
+                data["Program of Interest"] = data.program;
             }
-            data['Message'] = message || '(No message provided)';
-            data['Page URL'] = location.href;
-            data['Submitted At'] = new Date().toLocaleString();
-            if (form.elements.website.value) { ok(parentName); return }
+            if (form.elements.website.value || (form.elements.b_company_fax && form.elements.b_company_fax.value)) { ok(parentName); return }
             if (Date.now() - opened < 2500) { toast('error', 'Please slow down', 'Wait a moment, then press send again.'); return }
             var w = left(); if (w > 0) { toast('error', 'Request already sent', 'Please wait ' + w + ' seconds before sending another message.'); return }
             busy = true; btn.classList.add('ld'); btn.disabled = true;
-            post(data).then(function () { mark(); ok(parentName) }, function (err) { toast('error', 'We couldn’t send your message', navigator.onLine === false || (err && err.message === 'offline') ? 'You appear to be offline. Check your connection and try again.' : 'Something went wrong on our side. Your details are still here, please try again.') }).then(function () { busy = false; btn.classList.remove('ld'); btn.disabled = false })
+            post(data).then(function () { mark(); ok(parentName) }, function (err) {
+                var msg = 'Something went wrong on our side. Your details are still here, please try again.';
+                if (navigator.onLine === false || (err && err.message === 'offline')) {
+                    msg = 'You appear to be offline. Check your connection and try again.';
+                } else if (err && err.message && err.message !== 'http') {
+                    msg = err.message;
+                }
+                toast('error', 'We couldn’t send your message', msg);
+                if (window.turnstile && tsWidgetId !== null) turnstile.reset(tsWidgetId);
+            }).then(function () { busy = false; btn.classList.remove('ld'); btn.disabled = false })
         });
     } catch (e) { }
 })()
