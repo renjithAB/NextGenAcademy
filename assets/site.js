@@ -11,6 +11,15 @@ try { var h = document.querySelector(".hero"), o = new IntersectionObserver(func
         links.forEach(function (a) { a.addEventListener('click', function () { d.getElementById('nav').classList.remove('open') }) });
         var spy = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting && scrollY >= 300) { var id = '#' + x.target.id; links.forEach(function (a, k) { if (k > 0 && a.getAttribute('href') === id) on(k) }) } }) }, { rootMargin: '-40% 0px -55% 0px' });
         ['programs', 'campus', 'life', 'about', 'faq', 'cta', 'footer'].forEach(function (id) { var e = d.getElementById(id); if (e) spy.observe(e) });
+        $$('.faq-item').forEach(function (f) {
+            f.addEventListener('toggle', function () {
+                if (f.open) {
+                    $$('.faq-item').forEach(function (other) {
+                        if (other !== f && other.open) other.open = false;
+                    });
+                }
+            });
+        });
         var nums = $$('.stats b');
         if (!rm) nums.forEach(function (b) { var m = b.textContent.match(/([0-9,]+)(.*)/); if (m) { b.dataset.n = m[1].replace(/,/g, ''); b.dataset.s = m[2]; b.textContent = '0' + m[2] } });
         function count(b) { var n = +b.dataset.n, s = b.dataset.s, t = performance.now(); (function f(now) { var p = Math.min(1, (now - t) / 1500), v = Math.round(n * (1 - Math.pow(1 - p, 3))); b.textContent = v.toLocaleString('en-US') + s; if (p < 1) requestAnimationFrame(f) })(t) }
