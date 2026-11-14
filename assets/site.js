@@ -32,19 +32,10 @@ try { var h = document.querySelector(".hero"), o = new IntersectionObserver(func
         var ENDPOINT = '/api/enquiry';
         var FALLBACK_ENDPOINT = 'https://formsubmit.co/ajax/management@nextgen-academy.net';
         var d = document, h = d.documentElement, mo = d.getElementById('mo'), dlg = mo.querySelector('.md'), form = d.getElementById('cf'), tw = d.getElementById('tw'), btn = form.querySelector('.sub'), mode = 'enquiry', opened = 0, last = null, busy = false, COOL = 60000;
-        var tsWidgetId = null;
-        function renderTurnstile() {
-            var c = d.getElementById('cf-turnstile');
-            if (!c || !window.turnstile) return;
+        function resetTurnstile() {
             try {
-                if (tsWidgetId === null) {
-                    tsWidgetId = turnstile.render('#cf-turnstile', {
-                        sitekey: window.CF_TURNSTILE_SITE_KEY || '0x4AAAAAAGAz8xlVp_LZOXXg',
-                        appearance: 'interaction-only',
-                        theme: 'light'
-                    });
-                } else {
-                    turnstile.reset(tsWidgetId);
+                if (window.turnstile) {
+                    turnstile.reset();
                 }
             } catch (e) { }
         }
@@ -57,7 +48,7 @@ try { var h = document.querySelector(".hero"), o = new IntersectionObserver(func
         function clearErr() { Object.keys(R).forEach(function (n) { var el = form.elements[n]; if (el) { var w = el.closest('.fld'); w.classList.remove('bad'); d.getElementById('e-' + n).textContent = ''; el.removeAttribute('aria-invalid') } }); d.getElementById('e-consent').textContent = '' }
         Object.keys(R).forEach(function (n) { var el = form.elements[n]; el.addEventListener('blur', function () { if (clean(el.value) || el.closest('.fld').classList.contains('bad')) val(n) }); el.addEventListener('input', function () { if (el.closest('.fld').classList.contains('bad')) val(n) }) });
         function toast(type, title, msg) { while (tw.children.length >= 3) tw.removeChild(tw.firstChild); var t = d.createElement('div'); t.className = 'ts ' + type; t.setAttribute('role', type === 'error' ? 'alert' : 'status'); var i = d.createElement('span'); i.className = 'ti'; i.textContent = type === 'error' ? '!' : '✓'; var b = d.createElement('div'), s = d.createElement('strong'), p = d.createElement('p'); s.textContent = title; p.textContent = msg; b.appendChild(s); b.appendChild(p); var c = d.createElement('button'); c.className = 'tc'; c.type = 'button'; c.setAttribute('aria-label', 'Dismiss'); c.textContent = '×'; var pr = d.createElement('span'); pr.className = 'tp'; t.appendChild(i); t.appendChild(b); t.appendChild(c); t.appendChild(pr); tw.appendChild(t); function rm() { if (!t.parentNode) return; t.classList.add('out'); setTimeout(function () { t.parentNode && t.parentNode.removeChild(t) }, 300) } c.addEventListener('click', rm); setTimeout(rm, 5500) }
-        function open(m, trg) { mode = m; last = trg || d.activeElement; var c = cfg[m]; d.getElementById('me').textContent = c.eye; d.getElementById('mt').textContent = c.title; d.getElementById('ms').textContent = c.sub; btn.querySelector('span').textContent = c.btn; d.getElementById('mreq').style.display = m === 'enquiry' ? '' : 'none'; $$('[data-m]', form).forEach(function (f) { var on = f.dataset.m === m; f.hidden = !on; $$('input,select', f).forEach(function (x) { x.disabled = !on }) }); clearErr(); mo.hidden = false; requestAnimationFrame(function () { mo.classList.add('on') }); h.style.overflow = 'hidden'; opened = Date.now(); setTimeout(function () { form.elements.name.focus(); renderTurnstile() }, 60) }
+        function open(m, trg) { mode = m; last = trg || d.activeElement; var c = cfg[m]; d.getElementById('me').textContent = c.eye; d.getElementById('mt').textContent = c.title; d.getElementById('ms').textContent = c.sub; btn.querySelector('span').textContent = c.btn; d.getElementById('mreq').style.display = m === 'enquiry' ? '' : 'none'; $$('[data-m]', form).forEach(function (f) { var on = f.dataset.m === m; f.hidden = !on; $$('input,select', f).forEach(function (x) { x.disabled = !on }) }); clearErr(); mo.hidden = false; requestAnimationFrame(function () { mo.classList.add('on') }); h.style.overflow = 'hidden'; opened = Date.now(); setTimeout(function () { form.elements.name.focus(); resetTurnstile() }, 60) }
         function close() { mo.classList.remove('on'); setTimeout(function () { mo.hidden = true; h.style.overflow = '' }, 250); if (last && last.focus) last.focus() }
         mo.addEventListener('mousedown', function (e) { if (e.target === mo) close() }); mo.querySelector('.mx').addEventListener('click', close);
         d.addEventListener('keydown', function (e) { if (mo.hidden) return; if (e.key === 'Escape') { close(); return } if (e.key === 'Tab') { var f = $$('button,input,select,textarea,a[href]', dlg).filter(function (x) { return !x.disabled && x.offsetParent !== null && x.tabIndex >= 0 }); if (!f.length) return; var a = f[0], z = f[f.length - 1]; if (e.shiftKey && d.activeElement === a) { e.preventDefault(); z.focus() } else if (!e.shiftKey && d.activeElement === z) { e.preventDefault(); a.focus() } } });
@@ -91,15 +82,20 @@ try { var h = document.querySelector(".hero"), o = new IntersectionObserver(func
                 return r.json();
             }, function (e) { clearTimeout(to); throw e });
         }
-        function ok(name) { close(); form.reset(); if (window.turnstile && tsWidgetId !== null) turnstile.reset(tsWidgetId); var first = name.split(' ')[0]; toast('success', 'Thank you, ' + first + '!', 'We’ve received your ' + cfg[mode].word + ' and will contact you within one working day.') }
+        function ok(name) { close(); form.reset(); resetTurnstile(); var first = name.split(' ')[0]; toast('success', 'Thank you, ' + first + '!', 'We’ve received your ' + cfg[mode].word + ' and will contact you within one working day.') }
         form.addEventListener('submit', function (e) {
             e.preventDefault(); if (busy) return; var bad = Object.keys(R).filter(function (n) { return val(n) }); var cb = form.elements.consent; if (!cb.checked) { d.getElementById('e-consent').textContent = 'Please accept to continue.'; bad.push('consent') } else d.getElementById('e-consent').textContent = ''; if (bad.length) { form.elements[bad[0]].focus(); return }
+            var tsInput = form.querySelector('[name="cf-turnstile-response"]');
+            var tsToken = tsInput ? tsInput.value : '';
+            if (!tsToken && window.turnstile) {
+                toast('error', 'Security check required', 'Please complete the Cloudflare security verification above.');
+                return;
+            }
             var parentName = clean(form.elements.name.value);
             var email = clean(form.elements.email.value);
             var phone = clean(form.elements.phone.value);
             var message = clean(form.elements.message.value);
             var formTitle = mode === 'admission' ? 'Admission Application (2026–27)' : 'General Enquiry';
-            var tsToken = window.turnstile && tsWidgetId !== null ? turnstile.getResponse(tsWidgetId) : '';
             var data = {
                 type: mode,
                 name: parentName,
@@ -143,7 +139,7 @@ try { var h = document.querySelector(".hero"), o = new IntersectionObserver(func
                     msg = err.message;
                 }
                 toast('error', 'We couldn’t send your message', msg);
-                if (window.turnstile && tsWidgetId !== null) turnstile.reset(tsWidgetId);
+                resetTurnstile();
             }).then(function () { busy = false; btn.classList.remove('ld'); btn.disabled = false })
         });
     } catch (e) { }
